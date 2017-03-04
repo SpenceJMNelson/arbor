@@ -44,14 +44,14 @@
 
         <script>
             var flat = document.getElementById("tree-field-wrapper "),
-    flatStyle = flat.style,
-    _transform = "WebkitTransform" in flatStyle ? "WebkitTransform" :
-        "MozTransform" in flatStyle ? "MozTransform" :
+            flatStyle = flat.style,
+            _transform = "WebkitTransform" in flatStyle ? "WebkitTransform" :
+            "MozTransform" in flatStyle ? "MozTransform" :
             "msTransform" in flatStyle ? "msTransform" : false;
 
-_transform && window.addEventListener("deviceorientation", function(e) {
-    flatStyle[_transform] = "perspective(500px) rotateY("+(-e.gamma)+"deg) rotateX("+e.beta+"deg) rotateZ("+-(e.alpha-180)+"deg)";
-});
+            _transform && window.addEventListener("deviceorientation", function(e) {
+            flatStyle[_transform] = "perspective(500px) rotateY("+(-e.gamma)+"deg) rotateX("+e.beta+"deg) rotateZ("+-(e.alpha-180)+"deg)";
+            });
 
 
         </script>
