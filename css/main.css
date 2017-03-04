@@ -180,9 +180,9 @@ textarea {
     height:100px;
     background:#1d1712;
     animation-name: tree-growth;
-    animation-duration: 120s;
+    animation-duration: 60s;
     animation-fill-mode: both;
-    animation-timing-function: linear;
+
 
    }
 
@@ -196,7 +196,7 @@ textarea {
     background:green;
     transform: translateX(-50%) translateY(-100%);
     animation-name: leaf-growth;
-    animation-duration: 120s;
+    animation-duration: 30s;
     transform-origin: bottom;
     transition:500ms;
     animation-timing-function: linear;
@@ -214,7 +214,7 @@ textarea {
     animation-name: branch-growth;
     animation-duration: 30s;
     animation-fill-mode: both;
-    animation-delay: 60s;
+    animation-delay: 10s;
     animation-timing-function: linear;
    }
 
