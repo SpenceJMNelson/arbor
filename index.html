@@ -20,11 +20,24 @@
         <![endif]-->
 
         <!-- Add your site or application content here -->
+        
+            
+
         <div id="tree-field-wrapper">
+        <div class="tempxylophone">
+            <div class="tempxylophone-key tempxylophone-hi"></div>
+            <div class="tempxylophone-key tempxylophone-med"></div>
+            <div class="tempxylophone-key tempxylophone-lo"></div>
+
+        </div>
             <div class="tree-field">
+
+
 
             </div>
         </div>
+
+
 
         <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\/script>')</script>
@@ -42,7 +55,7 @@
             ga('create','UA-XXXXX-X','auto');ga('send','pageview');
         </script>
 
-        <script>
+        <!--<script>
             $('#tree-field-wrapper').tilt({
                 maxTilt:        10,
                 perspective:    9999,   // Transform perspective, the lower the more extreme the tilt gets.
@@ -62,7 +75,77 @@ $('.f3d1aeb2-e070-4847-abd4-c482491ccec6').css({'transition-delay' : (Math.rando
  });
 
             
-        </script>
+        </script> -->
+
+        <audio id="beep-one" controls preload="auto" style="opacity:0;">
+    <source src="resources/highding.mp3" controls></source>
+    Your browser isn't invited for super fun audio time.
+</audio>
+
+<audio id="beep-two" controls preload="auto" style="opacity:0;">
+    <source src="resources/mediumding.mp3" controls></source>
+    Your browser isn't invited for super fun audio time.
+</audio>
+
+<audio id="beep-three" controls preload="auto" style="opacity:0;">
+    <source src="resources/lowding.mp3" controls></source>
+    Your browser isn't invited for super fun audio time.
+</audio>
+
+<audio id="ambient-sound" loop="loop" autoplay="autoplay" preload="auto">
+    <source src="resources/ambient-sound.mp3" controls></source>
+    Your browser isn't invited for super fun audio time.
+</audio>
+
+<script type="text/javascript">
+    
+
+$(".tempxylophone-lo")
+  .each(function(i) {
+    if (i != 0) { 
+      $("#beep-three")
+        .clone()
+        .attr("id", "beep-three" + i)
+        .appendTo($(this).parent()); 
+    }
+    $(this).data("beeper-three", i);
+  })
+  .click(function() {
+    $("#beep-three" + $(this).data("beeper-three"))[0].play();
+  });
+$("#beep-three").attr("id", "beep-three0");
+
+$(".tempxylophone-med")
+  .each(function(i) {
+    if (i != 0) { 
+      $("#beep-two")
+        .clone()
+        .attr("id", "beep-two" + i)
+        .appendTo($(this).parent()); 
+    }
+    $(this).data("beeper-two", i);
+  })
+  .click(function() {
+    $("#beep-two" + $(this).data("beeper-two"))[0].play();
+  });
+$("#beep-two").attr("id", "beep-two0");
+
+$(".tempxylophone-hi")
+  .each(function(i) {
+    if (i != 0) { 
+      $("#beep-one")
+        .clone()
+        .attr("id", "beep-one" + i)
+        .appendTo($(this).parent()); 
+    }
+    $(this).data("beeper-one", i);
+  })
+  .click(function() {
+    $("#beep-one" + $(this).data("beeper-one"))[0].play();
+  });
+$("#beep-one").attr("id", "beep-one0");
+
+</script>
 
     </body>
 </html>
