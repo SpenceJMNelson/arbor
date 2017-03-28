@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="25px" height="25px" viewBox="0 0 25 25" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 3</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="square" stroke-linejoin="round">
+        <g id="Group-7" transform="translate(-130.000000, -14.000000)" stroke="#143BF0" stroke-width="2">
+            <g id="Group-3" transform="translate(131.000000, 15.000000)">
+                <g id="Group-5">
+                    <g id="Group-4" transform="translate(10.454545, 0.000000)">
+                        <path d="M0.696969697,0 L0.696969697,4.18181818" id="Line"></path>
+                        <path d="M0.696969697,18.8181818 L0.696969697,23" id="Line-Copy"></path>
+                    </g>
+                    <g id="Group-4" transform="translate(11.500000, 11.954545) rotate(90.000000) translate(-11.500000, -11.954545) translate(10.000000, 0.454545)">
+                        <path d="M0.696969697,0 L0.696969697,4.18181818" id="Line"></path>
+                        <path d="M0.696969697,18.8181818 L0.696969697,23" id="Line-Copy"></path>
+                    </g>
+                </g>
+                <g id="Group-5" transform="translate(11.146447, 11.403576) rotate(45.000000) translate(-11.146447, -11.403576) translate(3.146447, 3.903576)">
+                    <g id="Group-4" transform="translate(7.652893, -0.000000)">
+                        <path d="M0.443526171,0 L0.443526171,2.66115702" id="Line"></path>
+                        <path d="M0.443526171,11.9752066 L0.443526171,14.6363636" id="Line-Copy"></path>
+                    </g>
+                    <g id="Group-4" transform="translate(8.136364, 7.652893) rotate(90.000000) translate(-8.136364, -7.652893) translate(7.136364, 0.152893)">
+                        <path d="M0.443526171,1.40554235e-13 L0.443526171,2.66115702" id="Line"></path>
+                        <path d="M0.443526171,11.9752066 L0.443526171,14.6363636" id="Line-Copy"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

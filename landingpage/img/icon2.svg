@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="26px" height="20px" viewBox="0 0 26 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 6</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linejoin="round">
+        <g id="Group-7" transform="translate(1.000000, -16.000000)" stroke="#143BF0">
+            <g id="Group-6" transform="translate(0.000000, 17.000000)">
+                <path d="M3,13.7259677 C3,13.7259677 4.81998199,12 7.46109359,12 C10.1022052,12 11.8901857,13.7065379 11.8901857,13.7065379 L11.8901857,1.70653788 C11.8901857,1.70653788 10.1022052,0 7.46109359,0 C4.81998199,0 3,1.72596773 3,1.72596773 L3,13.7259677 Z" id="Path-2" stroke-width="2"></path>
+                <path d="M12,13.7259677 C12,13.7259677 13.819982,12 16.4610936,12 C19.1022052,12 20.8901857,13.7065379 20.8901857,13.7065379 L20.8901857,1.70653788 C20.8901857,1.70653788 19.1022052,0 16.4610936,0 C13.819982,0 12,1.72596773 12,1.72596773 L12,13.7259677 Z" id="Path-2-Copy" stroke-width="2"></path>
+                <polyline id="Path-3" stroke-width="2" points="2.55793424 3.67678086 0 3.67678086 0 16.7259677 23.9293747 16.7259677 23.9293747 3 21.016341 3"></polyline>
+                <path d="M11,17.5 L13,17.5" id="Line" stroke-width="3" stroke-linecap="round"></path>
+            </g>
+        </g>
+    </g>
+</svg>
