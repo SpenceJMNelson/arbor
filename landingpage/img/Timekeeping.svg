@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="81px" height="81px" viewBox="0 0 81 81" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
+    <title>Timekeeping</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linejoin="round">
+        <g id="Timekeeping" stroke="#143BF0" stroke-width="2">
+            <g id="sol-system" transform="translate(17.000000, 17.000000)">
+                <g id="Sun" transform="translate(14.000000, 15.000000)">
+                    <ellipse id="Oval" cx="10.1923077" cy="9.5" rx="4.30769231" ry="4.256"></ellipse>
+                    <path d="M10,0 L10,1.52" id="Line" stroke-linecap="square"></path>
+                    <path d="M10,17.48 L10,19" id="Line-Copy" stroke-linecap="square"></path>
+                    <path d="M18.8461538,8.74 L18.8461538,10.26" id="Line" stroke-linecap="square" transform="translate(18.846154, 9.500000) rotate(90.000000) translate(-18.846154, -9.500000) "></path>
+                    <path d="M1.15384615,8.74 L1.15384615,10.26" id="Line-Copy" stroke-linecap="square" transform="translate(1.153846, 9.500000) rotate(90.000000) translate(-1.153846, -9.500000) "></path>
+                    <path d="M16.2551754,2.55988673 L16.2551754,4.07988673" id="Line" stroke-linecap="square" transform="translate(16.255175, 3.319887) rotate(45.000000) translate(-16.255175, -3.319887) "></path>
+                    <path d="M3.74482463,14.9201133 L3.74482463,16.4401133" id="Line-Copy" stroke-linecap="square" transform="translate(3.744825, 15.680113) rotate(45.000000) translate(-3.744825, -15.680113) "></path>
+                    <path d="M16.2551754,14.9201133 L16.2551754,16.4401133" id="Line" stroke-linecap="square" transform="translate(16.255175, 15.680113) rotate(135.000000) translate(-16.255175, -15.680113) "></path>
+                    <path d="M3.74482463,2.55988673 L3.74482463,4.07988673" id="Line-Copy" stroke-linecap="square" transform="translate(3.744825, 3.319887) rotate(135.000000) translate(-3.744825, -3.319887) "></path>
+                </g>
+                <g id="Earth-orbit">
+                    <ellipse id="Earth-path" cx="24.5" cy="24.5" rx="24.5" ry="24.5"></ellipse>
+                    <g id="Moonorbit" transform="translate(50.000000, 25.000000) rotate(360.000000) translate(-50.000000, -25.000000) translate(39.000000, 15.000000)">
+                        <ellipse id="Moon-path" cx="10" cy="10" rx="10" ry="10"></ellipse>
+                        <circle id="Moon" cx="20" cy="10" r="1.41326531"></circle>
+                        <ellipse id="Earth" cx="10" cy="10" rx="3.32653061" ry="3.32653061"></ellipse>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
