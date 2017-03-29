@@ -1,5 +1,5 @@
 body {
-  background:cyan;
+  background:blue;
   overflow:hidden;
 }
 
@@ -25,11 +25,31 @@ body {
   
 }
 
+.site-view {
+  width:100vw;
+  height:100vh;
+  position:absolute;
+  top:0;
+  left:0;
+  overflow-y:scroll;
+  overflow-x: hidden;
+  transform: scale(.8) translateZ(-100px);
+  opacity: 0;
+  transition: 700ms;
+  background:cyan;
+  transform-style: preserve-3d;
+}
+
+.site-view.active {
+  transform: scale(1) translateZ(0px);
+  opacity: 1;
+}
+
 .bottom-navigation {
   position: absolute;
   bottom:20px;
   left:50%;
-  transform: translateX(-50%);
+  transform: translateX(-50%) translateZ(100px);
   text-align: center;
   width:100%;
 }
@@ -52,7 +72,7 @@ body {
   transform: translateX(-50%) translateY(-50%);
 }
 
-.bottom-navigation a:hover {
+.bottom-navigation a:hover, .bottom-navigation a.active {
   border:2px solid blue;
 }
 
