@@ -10,9 +10,63 @@ $(document.body).on('click', '.initial-tree-info' ,function(){
 
 });
 
-$(document.body).on('click', '.supplemental-tree-info-close' ,function(){
+$(document.body).on('click', '.backbutton.toprimary' ,function(){
         $(".initial-tree-info").removeClass( "active" );
         $(".supplemental-tree-info").removeClass( "active" );
+});
+
+
+$(document.body).on('click', '.showleafcontent' ,function(){
+        $(".tertiary-tree-info").addClass( "active" );
+        $(".tertiarynav-link").removeClass( "active" );
+        $(".tertiarynav-link-leaf").addClass( "active" );
+        $(".tertiary-content").removeClass( "active" );
+        $(".leaf-content").addClass( "active" );
+});
+
+$(document.body).on('click', '.showfruitcontent' ,function(){
+        $(".tertiary-tree-info").addClass( "active" );
+        $(".tertiarynav-link").removeClass( "active" );
+        $(".tertiarynav-link-fruit").addClass( "active" );
+        $(".tertiary-content").removeClass( "active" );
+        $(".fruit-content").addClass( "active" );
+});
+
+$(document.body).on('click', '.showflowercontent' ,function(){
+        $(".tertiary-tree-info").addClass( "active" );
+        $(".tertiarynav-link").removeClass( "active" );
+        $(".tertiarynav-link-flower").addClass( "active" );
+        $(".tertiary-content").removeClass( "active" );
+        $(".flower-content").addClass( "active" );
+});
+
+
+$(document.body).on('click', '.backbutton.tosecondary' ,function(){
+        $(".tertiary-tree-info").removeClass( "active" );
+});
+
+
+
+
+$(document.body).on('click', '.tertiarynav-link-leaf' ,function(){
+        $(".tertiarynav-link").removeClass( "active" );
+        $(this).addClass( "active" );
+        $(".tertiary-content").removeClass( "active" );
+        $(".leaf-content").addClass( "active" );
+});
+
+$(document.body).on('click', '.tertiarynav-link-fruit' ,function(){
+        $(".tertiarynav-link").removeClass( "active" );
+        $(this).addClass( "active" );
+        $(".tertiary-content").removeClass( "active" );
+        $(".fruit-content").addClass( "active" );
+});
+
+$(document.body).on('click', '.tertiarynav-link-flower' ,function(){
+        $(".tertiarynav-link").removeClass( "active" );
+        $(this).addClass( "active" );
+        $(".tertiary-content").removeClass( "active" );
+        $(".flower-content").addClass( "active" );
 });
 
 

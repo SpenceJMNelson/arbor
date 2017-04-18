@@ -28,106 +28,162 @@
   
 
 <div class="site-view explore-view">
-  <section id="memberWrapper">
-  <div class="explore-nav">
-    <div class="search-wrapper p1">
-      <label>
-        <i class="fa fa-search" aria-hidden="true"></i>
-      </label>
-      <input class="search" placeholder="Search Trees">
-    </div>
+  <div class="view-content-wrapper">
+  <h3>Arbor</h3> 
+  <h2>Discover Trees</h2> 
+    <section id="memberWrapper">
 
-    <div class="sort-wrapper text-center p0 mb1">
-      <button class="sort btn btn-outline" data-sort="treenamestd">Sort by Tree Name</button>
-      <button class="sort btn btn-outline" data-sort="treenamesci">Sort by Scientific Name</button>
-    </div>
-  </div>
-  <ul id="barGuildMemberList" class="list list-reset bb1">
-    <script id="memberTemplate" type="text/x-mustache-template">
-    <h2>Explore</h2> 
-      {{#.}}
-      <li class="tree-items">
-        <div class="group">
-          <div class="initial-tree-info" href="#">
-            <div class="leaf-image-wrapper">
-            <img class="leafimage" src="img/tree-images/{{gsx$treenamesci.$t}}/leaf.jpg"/>
-            </div>
-            <div class="info-text-wrapper">
-            <h3 class="treenamestd">{{gsx$treenamestd.$t}}</h3> 
-            <p class="treenamesci">{{gsx$treenamesci.$t}}</p>
-            </div>
-          </div>
-          
-          <div id="supplemental-tree-info" class="supplemental-tree-info">
-            <a class="supplemental-tree-info-close">Explore</a>
-            <h2 class="treenamestd">{{gsx$treenamestd.$t}}</h2> 
-            <h2 class="treenamesci"><em>{{gsx$treenamesci.$t}}</em></h2>
+    <div class="explore-nav">
+      <div class="search-wrapper p1">
+        <label>
+          <i class="fa fa-search" aria-hidden="true"></i>
+        </label>
+        <input class="search" placeholder="Search Trees">
+      </div>
 
-            <div class="arbor-row">
-              <div class="arbor-col-1-4">
-                <h6>Leaf</h6>
-                <div class="color-image-wrapper">
-                  <img class="leafimage" src="img/tree-images/{{gsx$treenamesci.$t}}/leaf.jpg"/>
-                </div>
+      <div class="sort-wrapper text-center p0 mb1">
+        <button class="sort btn btn-outline" data-sort="treenamestd">Sort by Tree Name</button>
+        <button class="sort btn btn-outline" data-sort="treenamesci">Sort by Scientific Name</button>
+      </div>
+    </div>
+    <ul id="barGuildMemberList" class="list list-reset bb1">
+      <script id="memberTemplate" type="text/x-mustache-template">
+      
+        {{#.}}
+        <li class="tree-items">
+          <div class="group">
+            <div class="initial-tree-info" href="#">
+              <div class="color-image-wrapper">
+              <img class="leafimage" src="img/tree-images/{{gsx$treenamesci.$t}}/leaf-group.jpg"/>
               </div>
-              <div class="arbor-col-1-4">
-                <h6>Fruit</h6>
-                <div class="color-image-wrapper">
-                  <img class="leafimage" src="img/tree-images/{{gsx$treenamesci.$t}}/fruit.jpg"/>
-                </div>
+              <div class="info-text-wrapper">
+              <h3 class="treenamestd">{{gsx$treenamestd.$t}}</h2> 
+              <h3 class="treenamesci">{{gsx$treenamesci.$t}}</h2>
               </div>
-              <div class="arbor-col-1-2">
-                <h6>Flower</h6>
-                <div class="arbor-row">
-                  <div class="arbor-col-1-2">
-                    <div class="color-image-wrapper">
-                      <img class="leafimage" src="img/tree-images/{{gsx$treenamesci.$t}}/flower-male.jpg"/>
-                    </div>
-                  </div>
-                  <div class="arbor-col-1-2">
-                    <div class="color-image-wrapper">
-                      <img class="leafimage" src="img/tree-images/{{gsx$treenamesci.$t}}/flower-female.jpg"/>
-                    </div>
+            </div>
+            
+            <div id="supplemental-tree-info" class="supplemental-tree-info">
+              <h3><a class="backbutton toprimary" href="#">Discover Trees</a></h3>
+              <h2 class="treenamestd">{{gsx$treenamestd.$t}} &middot; <em>{{gsx$treenamesci.$t}}</em></h2> 
+
+              <div class="arbor-row">
+                <div class="arbor-col-1-4 backgroundcolor showleafcontent">
+                  <h6><span class="icon leaf"></span> Leaf</h6>
+                  <div class="color-image-wrapper">
+                    <img class="leafimage" src="img/tree-images/{{gsx$treenamesci.$t}}/leaf.jpg"/>
                   </div>
                 </div>
+                <div class="arbor-col-1-4 backgroundcolor showfruitcontent">
+                  <h6><span class="icon seed"></span> Fruit</h6>
+                  <div class="color-image-wrapper">
+                    <img class="leafimage" src="img/tree-images/{{gsx$treenamesci.$t}}/fruit.jpg"/>
+                  </div>
+                </div>
+                <div class="arbor-col-1-2 backgroundcolor showflowercontent">
+                  <h6><span class="icon flower"></span> Flower</h6>
+                  <div class="arbor-row">
+                    <div class="arbor-col-1-2 backgroundcolor">
+                      <div class="color-image-wrapper">
+                        <img class="leafimage" src="img/tree-images/{{gsx$treenamesci.$t}}/flower-male.jpg"/>
+                      </div>
+                    </div>
+                    <div class="arbor-col-1-2 backgroundcolor">
+                      <div class="color-image-wrapper">
+                        <img class="leafimage" src="img/tree-images/{{gsx$treenamesci.$t}}/flower-female.jpg"/>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
-            </div>
 
-            <div class="arbor-row">
-              <div class="arbor-col-1-4">
+              <div class="arbor-row">
+                <div class="arbor-col-1-4">
 
-                <h6 class="superheader">Max. Height</h6>
-                <p class="leafgrowth">{{gsx$maxgrowthm.$t}} m</p>
+                  <h6 class="superheader">Max. Height</h6>
+                  <p class="leafgrowth">{{gsx$maxgrowthm.$t}} m</p>
 
-                <h6 class="superheader">Lifespan</h6>
-                <p class="longevity">{{gsx$longevity.$t}}</p>
+                  <h6 class="superheader">Lifespan</h6>
+                  <p class="longevity">{{gsx$longevity.$t}}</p>
+
+                  <h6 class="superheader">Origin</h6>
+                  <p class="longevity">{{gsx$origin.$t}}</p>
+
+                </div>
+                <div class="arbor-col-3-4">
+
+                  <h6 class="superheader">Description</h6>
+                  <p class="summary">{{gsx$summary.$t}}</p>
+
+                  <h6 class="superheader">Habitat</h6>
+                  <p class="habitat">{{gsx$habitat.$t}}</p>
+
+                  <h6 class="superheader">Bloom Time</h6>
+                  <p class="bloomtime">{{gsx$bloomtime.$t}}</p>
+
+                  <h6 class="superheader">Leaf Growth</h6>
+                  <p class="bloomtime">{{gsx$leafgrowth.$t}}</p>
+
+                </div>
+              </div>
+
+              <div class="tertiary-tree-info">
+                <h3><a class="backbutton tosecondary" href="#">{{gsx$treenamestd.$t}} &middot; <em>{{gsx$treenamesci.$t}}</em></a></h3> 
+                <h2><a class="tertiarynav-link active tertiarynav-link-leaf" href="#">Leaf</a> &middot; <a class="tertiarynav-link tertiarynav-link-fruit" href="#">Fruit</a> &middot; <a class="tertiarynav-link tertiarynav-link-flower" href="#">Flower</a></h2> 
+
+                  <div class="tertiary-content leaf-content active">
+                    <div class="arbor-row">
+                      <div class="arbor-col-1-2 backgroundcolor invert">
+                          <h6 class="superheader">Shape</h6>
+                          <div class="color-image-wrapper">
+                            <img class="leafimage fullwidth" src="img/tree-images/{{gsx$treenamesci.$t}}/leaf.jpg"/>
+                          </div>
+                      </div>
+                      <div class="arbor-col-1-2">
+                        <h6 class="superheader">Quick Tips</h6>
+                        <p class="summary">{{gsx$summary.$t}}</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="tertiary-content fruit-content">
+                    <div class="arbor-row">
+                      <div class="arbor-col-1-2 backgroundcolor invert">
+                        <div class="color-image-wrapper">
+                          <img class="leafimage fullwidth" src="img/tree-images/{{gsx$treenamesci.$t}}/fruit.jpg"/>
+                        </div>
+                      </div>
+                      <div class="arbor-col-1-2">
+                        <h6 class="superheader">Description</h6>
+                        <p class="summary">{{gsx$summary.$t}}</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="tertiary-content flower-content">
+                    <div class="arbor-row">
+                      <div class="arbor-col-1-2 backgroundcolor invert">
+                        <div class="color-image-wrapper">
+                          <img class="leafimage fullwidth" src="img/tree-images/{{gsx$treenamesci.$t}}/flower-male.jpg"/>
+                        </div>
+                      </div>
+                      <div class="arbor-col-1-2">
+                        <h6 class="superheader">Description</h6>
+                        <p class="summary">{{gsx$summary.$t}}</p>
+                      </div>
+                    </div>
+                  </div>
 
               </div>
-              <div class="arbor-col-3-4">
 
-                <h6 class="superheader">Description</h6>
-                <p class="summary">{{gsx$summary.$t}}</p>
-
-                <h6 class="superheader">Habitat</h6>
-                <p class="habitat">{{gsx$habitat.$t}}</p>
-
-                <h6 class="superheader">Bloom Time</h6>
-                <p class="bloomtime">{{gsx$bloomtime.$t}}</p>
-
-                <h6 class="superheader">Leaf Growth</h6>
-                <p class="bloomtime">{{gsx$leafgrowth.$t}}</p>
-
-              </div>
             </div>
 
           </div>
-
-        </div>
-      </li>
-      {{/.}}
-    </script>
-  </ul>
-</section>
+        </li>
+        {{/.}}
+      </script>
+    </ul>
+  </section>
+</div>
 </div>
 
 <div class="site-view play-view active">

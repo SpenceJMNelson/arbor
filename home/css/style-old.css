@@ -1,0 +1,762 @@
+body {
+  background:cyan;
+  overflow:hidden;
+  color:blue;
+  font-family: sentinel;
+  font-weight: 100;
+}
+
+.branding {
+  position:absolute;
+  color:red;
+  top:50%;
+  left:50%;
+  transform:translateX(-50%) translateY(-50%) translateZ(300px);
+  text-align:center;
+
+  
+}
+
+.logotype h1 {
+  animation-name:build-in-rise;
+  animation-duration:5s;
+  animation-fill-mode:both;
+  animation-delay:1s;
+
+  
+}
+
+h1,h2,h3,h4,h5,p {
+  font-weight: 100;
+  margin:0;
+}
+
+h1 {
+  font-size:89px;
+  margin:0;
+  letter-spacing: -.05em;
+  
+}
+
+h2 {
+  font-size: 55px;
+}
+
+h3 {
+  font-size: 34px;
+}
+
+h4 {
+  font-size: 21px;
+}
+
+h6 {
+  margin:2em 0;
+  text-transform: uppercase;
+  font-weight: 100;
+}
+
+.site-view {
+  width:100vw;
+  height:100vh;
+  position:absolute;
+  top:0;
+  left:0;
+  overflow-y:scroll;
+  overflow-x: hidden;
+  transform: scale(.9) translateZ(-100px) translateX(0);
+  opacity: 0;
+  transition: 700ms transform,  700ms opacity;
+  background:cyan;
+  transform-style: preserve-3d;
+  pointer-events: none;
+}
+
+.explore-nav {
+  display:flex;
+}
+
+.explore-nav .search-wrapper,.explore-nav .sort-wrapper {
+ width:50%;
+ align-self: flex-end;
+ margin:0;
+}
+
+.site-view.explore-view {
+  transform: scale(.9) translateZ(-100px) translateX(-20%);
+}
+
+.site-view.think-view {
+  transform: scale(.9) translateZ(-100px) translateX(20%);
+}
+
+.site-view.active {
+  transform: scale(1) translateZ(0px) translateX(0);
+  opacity: 1;
+  
+  pointer-events: all;
+}
+
+.view-content-wrapper {
+  padding:2em;
+}
+
+.bottom-navigation {
+  position: absolute;
+  bottom:20px;
+  left:50%;
+  transform: translateX(-50%) translateZ(100px);
+  text-align: center;
+}
+
+.bottom-navigation a {
+  width:40px;
+  height:40px;
+  border:2px solid transparent;
+  margin:10px;
+  display: inline-block;
+  position: relative;
+  transition: 300ms;
+  border-radius: 100%;
+}
+
+.bottom-navigation a img {
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.bottom-navigation a:hover, .bottom-navigation a.active {
+  border:2px solid blue;
+}
+
+.arbor-row {
+  display: flex;
+
+}
+
+.arbor-col-1-4 {
+  width:25%;
+}
+
+.arbor-col-3-4 {
+  width:75%;
+}
+
+.arbor-col-1-2 {
+  width:50%;
+}
+
+/* ANIMATIONS */
+
+@keyframes slowsspin {
+    from {transform: rotateX(-30deg) rotateY(0deg);}
+    to {transform: rotateX(-30deg) rotateY(-360deg);}
+} 
+
+@keyframes build-in-rise {
+    0% {transform: translateY(50%); opacity:0;}
+    25% {transform: translateY(0%); opacity:1;}
+    75% {transform: translateY(0%); opacity:1;}
+    100% {transform: translateY(-50%); opacity:0;}
+} 
+
+
+@keyframes growbranch {
+    from {height: 0%;}
+    to {height: 60%;}
+} 
+
+@keyframes growtree {
+    from {transform:scale(0);}
+    to {transform:scale(1);}
+}
+
+@keyframes growtree-compensate {
+    from {width:20%;}
+    to {width:100%;}
+}
+
+@keyframes leafactivity {
+    /* winter */
+    0% {transform:scale(0) translateX(0%) rotateX(30deg); opacity:1}
+    /* spring */
+    25% {transform:scale(0) translateX(0%) rotateX(30deg); opacity:1}
+    /* summer */
+    50% {transform:scale(1) translateX(0%) rotateX(30deg); opacity:1}
+    /* fall */
+    75% {transform:scale(1) translateX(0%) rotateX(30deg); opacity:.5}
+    /* winter */
+    100% {transform:scale(1) translateX(300%) rotateX(-30deg); opacity:0}
+}
+
+@keyframes seedactivity {
+    /* winter */
+    0% {opacity:0;}
+    /* spring */
+    25% {opacity:0}
+    /* summer */
+    50% {opacity:0}
+    /* fall */
+    75% {opacity:1}
+    /* winter */
+    87% {opacity:1}
+    100% {opacity:0}
+}
+
+
+@keyframes floweractivity {
+    /* winter */
+    0% {opacity:0;}
+    12% {opacity:1;}
+    /* spring */
+    25% {opacity:1;}
+    37% {opacity:0;}
+    /* summer */
+    50% {opacity:0;}
+    /* fall */
+    75% {opacity:0;}
+    /* winter */
+    100% {opacity:0;}
+}
+
+@keyframes simplerotate {
+    from {transform: rotate(0deg);}
+    to {transform: rotate(360deg);}
+}
+
+@keyframes build-in-rise-1d {
+    from {transform: translateY(50%); opacity:0;}
+    to {transform: translateY(0%); opacity:1;}
+}
+
+/* PLAY */
+
+.timekeeping {
+  position: relative;
+  width:100px;
+  height:100px;
+}
+
+.sun, .earthpath {
+  position:absolute;
+}
+
+.sun {
+  left:50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.earthpath {
+  background-image: url(../img/Earth-path.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  width:100px;
+  height:100px;
+
+  animation-name:simplerotate;
+  animation-duration:12s;
+  animation-timing-function:linear;
+  animation-iteration-count:infinite;
+}
+
+.timekeeping img.earthsystem {
+  animation-name:simplerotate;
+  animation-duration:1s;
+  animation-timing-function:linear;
+  animation-iteration-count:infinite;
+  pointer-events: none;
+  margin: 22px;
+  transform-origin: 45% 50%;
+}
+
+#Moonorbit {
+  animation-name:simplerotate;
+  animation-duration:1s;
+  animation-timing-function:linear;
+  animation-iteration-count:infinite;
+  pointer-events: none;
+  transform-origin: 50% 50%;
+  position: absolute;
+  
+}
+
+
+
+.field {
+  position:relative;
+  width:100vw;
+  height:50vh;
+  transform: rotateX(30deg) rotateY(-30deg);
+  transform-style:preserve-3d;
+  animation-name:slowsspin;
+  animation-duration:48s;
+  animation-timing-function:linear;
+  animation-iteration-count:infinite;
+  pointer-events: none;
+}
+
+.tree {
+  width:70px;
+  height:250px;
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform-style:preserve-3d;
+  animation-name:growtree;
+  animation-duration:40s;
+  animation-fill-mode:both;
+  animation-timing-function:ease-out;
+}
+
+.trunk {
+  width:20%;
+  height:100%;
+  background:blue;
+  position:absolute;
+  bottom:0;
+  transform-style:preserve-3d;
+}
+
+.trunk:after {
+  content:"";
+  transform:rotateY(90deg);
+  width:100%;
+  height:100%;
+  background:blue;
+  position:absolute;
+  animation-name:growtree-compensate;
+  animation-duration:40s;
+  animation-fill-mode:both;
+  animation-timing-function:ease-out;
+}
+
+.branch {
+  width:50%;
+  height:60%;
+  position:absolute;
+  background:blue;
+  transform:rotateZ(30deg);
+  transform-origin:0% 100%;
+  transform-style:preserve-3d;
+  animation-name:growbranch;
+  animation-duration:12s;
+  animation-fill-mode:both;
+}
+
+
+.branch.level-1, .branch.level-1 .leaf, .branch.level-1 .seed, .branch.level-1 .flower {
+  animation-delay:5s;
+}
+
+.branch.level-2, .branch.level-2 .leaf, .branch.level-2 .seed, .branch.level-2 .flower {
+  animation-delay:17s;
+}
+
+.branch.level-3, .branch.level-3 .leaf, .branch.level-3 .seed, .branch.level-3 .flower {
+  animation-delay:29s;
+}
+
+.branch.level-4, .branch.level-4 .leaf, .branch.level-4 .seed, .branch.level-4 .flower {
+  animation-delay:41s;
+}
+
+.branch.level-5, .branch.level-4 .leaf, .branch.level-5 .seed, .branch.level-5 .flower {
+  animation-delay:53s;
+}
+
+.branch:nth-child(1) {
+  bottom:100%;
+}
+
+.branch:nth-child(2) {
+  bottom:60%;
+  transform:rotateZ(-30deg) rotateY(-30deg)  rotateX(-30deg);
+}
+
+.branch:nth-child(3) {
+  bottom:30%;
+  transform:rotateZ(30deg) rotateX(30deg);
+}
+
+.branch .leaf {
+  position:absolute;
+
+width: 0;
+height: 0;
+border-style: solid;
+border-width: 0 20px 34.6px 20px;
+border-color: transparent transparent #0000ff transparent;
+  margin-top: -20px;
+  margin-left: -20px;
+  animation-name:leafactivity;
+  animation-duration:12s;
+  animation-fill-mode:both;
+  animation-iteration-count:infinite;
+}
+
+.branch .flower {
+  position:absolute;
+  width:10px;
+  transform:rotateX(-30deg) rotateY(-30deg);
+  margin-left:-5px;
+  margin-top:-5px;
+  height:10px;
+  background-color:white;
+  animation-name:floweractivity;
+  animation-duration:12s;
+  animation-fill-mode:both;
+  animation-iteration-count:infinite;
+}
+
+.branch .seed {
+  position:absolute;
+  width:20px;
+  margin-left:-5px;
+  margin-top:-5px;
+  transform:rotateX(30deg) rotateY(30deg);
+  height:20px;
+  background-color:red;
+  animation-name:seedactivity;
+  animation-duration:12s;
+  animation-fill-mode:both;
+  animation-iteration-count:infinite;
+  border-radius:100%;
+  transform-style: preserve-3d;
+}
+
+.branch .seed:after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  transform: rotateY(90deg) rotateX(90deg);
+  height: 20px;
+  background-color: red;
+  border-radius: 100%;
+}
+
+
+.branch::before {
+  content:"";
+  transform:rotateY(90deg);
+  width:100%;
+  height:100%;
+  background:blue;
+  position:absolute;
+}
+
+
+/* EXPLORE */
+
+
+#memberWrapper {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
+  /* type stuff */
+  -moz-font-feature-settings: "kern";
+  -webkit-font-feature-settings: "kern";
+  -ms-font-feature-settings: "kern";
+  -o-font-feature-settings: "kern";
+  font-feature-settings: "kern";
+  font-kerning: normal;
+  text-rendering: optimizeLegibility;
+}
+
+#memberWrapper * {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.list-reset {
+  margin:0;
+  padding:0;
+  list-style:none;
+}
+
+.clearfix::after,
+.group::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.m0 { margin:0; }
+
+.mb1 { margin-bottom: 1em; }
+
+.p0 { padding: 0; }
+.p05 { padding: .5em; }
+.p1 { padding: 1em; }
+
+.bt1 { border-top: 1px solid currentColor; }
+.bb1 { border-bottom: 1px solid currentColor; }
+
+.text-center {
+  text-align: center;
+}
+
+.six {
+  width: 50%;
+}
+
+.columns {
+  float:left;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+
+.guildMember:nth-child(odd) {
+  background-color: rgba(0,0,0,.05);
+}
+
+.guildMember:hover {
+  background-color: rgba(158, 81, 78, 0.1);
+}
+
+.position {
+  font-size: .6em;
+  text-transform: uppercase;
+  color: rgba(0,0,0,.5);
+  font-family: sans-serif;
+  font-weight: bold;
+  letter-spacing: .05em;
+  display: inline-block;
+  padding-left: 1em;
+}
+
+.leaf-image-wrapper{
+  float:left;
+  position: relative;
+  
+}
+
+.color-image-wrapper {
+  position: relative;
+  display: inline-block;
+  mix-blend-mode: multiply;
+}
+
+.leafimage {
+  width:20vw;
+  mix-blend-mode: multiply;
+}
+
+.leafimage.large-img {
+  width:20vw;
+  mix-blend-mode: multiply;
+  margin-right:1em;
+}
+
+
+
+.leaf-image-wrapper:after, .color-image-wrapper:after {
+  content: "";
+  position: absolute;
+  top:0;
+  left:0;
+  right:0;
+  bottom:5px;
+  background-color: blue;
+  mix-blend-mode: screen;
+}
+
+.initial-tree-info {
+  display: flex;
+  align-items:center;
+  background:cyan;
+  animation-name: build-in-rise-1d;
+  animation-duration: 300ms;
+  cursor: pointer;
+}
+
+.initial-tree-info:hover {
+  background:white;
+}
+
+
+
+
+.initial-tree-info.active {
+  display: none;
+}
+
+
+
+.supplemental-tree-info {
+  display:none;
+  width:100vw;
+  height:100vh;
+  position: fixed;
+  top:0;
+  left:0;
+  z-index: 9999;
+  background: cyan;
+  transition:300ms;
+  overflow-y: scroll;
+  padding:2em;
+}
+
+.supplemental-tree-info p:nth-child(1n+0) {
+  animation-name: build-in-rise-1d;
+  animation-duration: 300ms;
+  animation-fill-mode: both;
+
+}
+
+.supplemental-tree-info p:nth-child(2) {
+  animation-delay: 100ms;
+}
+
+.supplemental-tree-info p:nth-child(3) {
+  animation-delay: 200ms;
+}
+
+.supplemental-tree-info p:nth-child(4) {
+  animation-delay: 300ms;
+}
+
+.supplemental-tree-info p:nth-child(5) {
+  animation-delay: 400ms;
+}
+
+.supplemental-tree-info p:nth-child(6) {
+  animation-delay: 500ms;
+}
+
+.supplemental-tree-info p:nth-child(7) {
+  animation-delay: 600ms;
+}
+
+.supplemental-tree-info p:nth-child(8) {
+  animation-delay: 700ms;
+}
+
+.supplemental-tree-info p:nth-child(9) {
+  animation-delay: 800ms;
+}
+
+.supplemental-tree-info p:nth-child(10){
+  animation-delay: 900ms;
+}
+
+.treenamesci {
+  font-style: italic;
+}
+
+
+.supplemental-tree-info.active {
+  display: block;
+}
+
+input.search {
+  width: 100%;
+  background: none;
+  border: none;
+  border-bottom: 2px solid blue;
+  height: 54px;
+  padding-bottom: 10px;
+  color: blue;
+  font-family: sentinel;
+  font-weight: 100;
+  font-style: italic;
+  font-size: 40px !important;
+}
+
+input.search,.btn-outline {
+  font-size: 16px;
+}
+
+input.search::placeholder {
+  color:blue;
+}
+
+.search-wrapper {
+  padding:0;
+  text-align: center;
+  margin-top: 1em;
+  margin-bottom: .3em
+}
+
+.btn-outline {
+  border :2px solid blue;
+  background:none;
+  color:blue;
+  padding:1em;
+  border-radius: 100px;
+  transition: 300ms;
+  width:47%;
+  margin:1%;
+}
+
+.btn-outline:hover {
+  border :2px solid blue;
+  background:blue;
+  color:white;
+}
+
+ul#barGuildMemberList.list.list-reset.bb1 {
+  border:none;
+}
+
+p.leafgrowth, p.longevity {
+  font-family: knockout;
+  font-size: 72px;
+  font-weight: 100;
+}
+
+.icon {
+  font-family: monospace;
+  margin-right:10px;
+}
+
+.icon.leaf {
+  position:relative;
+display: inline-block;
+width: 0;
+height: 0;
+border-style: solid;
+border-width: 0 10px 24.6px 10px;
+border-color: transparent transparent #0000ff transparent;
+  margin-top: -20px;
+  margin-bottom: -10px;
+  animation-name:leafactivity;
+  animation-duration:12s;
+  animation-fill-mode:both;
+  animation-iteration-count:infinite;
+}
+
+.icon.flower {
+  position:relative;
+  display: inline-block;
+  width:20px;
+  margin-left:-5px;
+  margin-bottom:-5px;
+  height:20px;
+  background-color:white;
+  animation-name:floweractivity;
+  animation-duration:12s;
+  animation-fill-mode:both;
+  animation-iteration-count:infinite;
+}
+
+.icon.seed {
+  position:relative;
+  display: inline-block;
+  width:20px;
+  margin-left:-5px;
+  margin-bottom:-5px;
+  height:20px;
+  background-color:red;
+  animation-name:seedactivity;
+  animation-duration:12s;
+  animation-fill-mode:both;
+  animation-iteration-count:infinite;
+  border-radius:100%;
+  transform-style: preserve-3d;
+}
+
