@@ -752,7 +752,8 @@ p.leafgrowth, p.longevity {
 
 .tertiarynav-link {
   color: inherit;
-  text-decoration: none; }
+  text-decoration: none;
+  cursor: pointer; }
 
 .tertiarynav-link.active {
   color: inherit;
