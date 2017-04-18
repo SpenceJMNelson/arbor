@@ -1,6 +1,9 @@
 body {
-  background:blue;
+  background:cyan;
   overflow:hidden;
+  color:blue;
+  font-family: sentinel;
+  font-weight: 100;
 }
 
 .branding {
@@ -30,6 +33,21 @@ h1 {
   
 }
 
+h1,h2,h3,h4,h5,p {
+  font-weight: 100;
+  margin:0;
+}
+
+h2 {
+  font-size: 40px;
+}
+
+h6 {
+  margin:2em 0;
+  text-transform: uppercase;
+  font-weight: 100;
+}
+
 .site-view {
   width:100vw;
   height:100vh;
@@ -40,9 +58,10 @@ h1 {
   overflow-x: hidden;
   transform: scale(.9) translateZ(-100px) translateX(0);
   opacity: 0;
-  transition: 700ms;
+  transition: 700ms transform,  700ms opacity;
   background:cyan;
   transform-style: preserve-3d;
+  pointer-events: none;
 }
 
 .site-view.explore-view {
@@ -56,7 +75,8 @@ h1 {
 .site-view.active {
   transform: scale(1) translateZ(0px) translateX(0);
   opacity: 1;
-  transition-delay: 200ms;
+  
+  pointer-events: all;
 }
 
 .bottom-navigation {
@@ -65,7 +85,6 @@ h1 {
   left:50%;
   transform: translateX(-50%) translateZ(100px);
   text-align: center;
-  width:100%;
 }
 
 .bottom-navigation a {
@@ -90,9 +109,28 @@ h1 {
   border:2px solid blue;
 }
 
+.arbor-row {
+  display: flex;
+
+}
+
+.arbor-col-1-4 {
+  width:25%;
+}
+
+.arbor-col-3-4 {
+  width:75%;
+}
+
+.arbor-col-1-2 {
+  width:50%;
+}
+
+/* ANIMATIONS */
+
 @keyframes slowsspin {
-    from {transform: rotateX(30deg) rotateY(0deg);}
-    to {transform: rotateX(30deg) rotateY(360deg);}
+    from {transform: rotateX(-30deg) rotateY(0deg);}
+    to {transform: rotateX(-30deg) rotateY(-360deg);}
 } 
 
 @keyframes build-in-rise {
@@ -166,6 +204,13 @@ h1 {
     to {transform: rotate(360deg);}
 }
 
+@keyframes build-in-rise-1d {
+    from {transform: translateY(50%); opacity:0;}
+    to {transform: translateY(0%); opacity:1;}
+}
+
+/* PLAY */
+
 .timekeeping {
   position: relative;
   width:100px;
@@ -222,10 +267,10 @@ h1 {
   position:relative;
   width:100vw;
   height:50vh;
-  transform: rotateX(30deg) rotateY(30deg);
+  transform: rotateX(30deg) rotateY(-30deg);
   transform-style:preserve-3d;
   animation-name:slowsspin;
-  animation-duration:30s;
+  animation-duration:48s;
   animation-timing-function:linear;
   animation-iteration-count:infinite;
   pointer-events: none;
@@ -378,5 +423,249 @@ border-color: transparent transparent #0000ff transparent;
   height:100%;
   background:blue;
   position:absolute;
+}
+
+
+/* EXPLORE */
+
+
+#memberWrapper {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
+  /* type stuff */
+  -moz-font-feature-settings: "kern";
+  -webkit-font-feature-settings: "kern";
+  -ms-font-feature-settings: "kern";
+  -o-font-feature-settings: "kern";
+  font-feature-settings: "kern";
+  font-kerning: normal;
+  text-rendering: optimizeLegibility;
+}
+
+#memberWrapper * {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.list-reset {
+  margin:0;
+  padding:0;
+  list-style:none;
+}
+
+.clearfix::after,
+.group::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.m0 { margin:0; }
+
+.mb1 { margin-bottom: 1em; }
+
+.p0 { padding: 0; }
+.p05 { padding: .5em; }
+.p1 { padding: 1em; }
+
+.bt1 { border-top: 1px solid currentColor; }
+.bb1 { border-bottom: 1px solid currentColor; }
+
+.text-center {
+  text-align: center;
+}
+
+.six {
+  width: 50%;
+}
+
+.columns {
+  float:left;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+
+.guildMember:nth-child(odd) {
+  background-color: rgba(0,0,0,.05);
+}
+
+.guildMember:hover {
+  background-color: rgba(158, 81, 78, 0.1);
+}
+
+.position {
+  font-size: .6em;
+  text-transform: uppercase;
+  color: rgba(0,0,0,.5);
+  font-family: sans-serif;
+  font-weight: bold;
+  letter-spacing: .05em;
+  display: inline-block;
+  padding-left: 1em;
+}
+
+.leaf-image-wrapper{
+  float:left;
+  position: relative;
+  
+}
+
+.color-image-wrapper {
+  position: relative;
+  display: inline-block;
+  mix-blend-mode: multiply;
+}
+
+.leafimage {
+  width:20vw;
+  mix-blend-mode: multiply;
+}
+
+
+.leaf-image-wrapper:after, .color-image-wrapper:after {
+  content: "";
+  position: absolute;
+  top:0;
+  left:0;
+  right:0;
+  bottom:5px;
+  background-color: blue;
+  mix-blend-mode: screen;
+}
+
+.initial-tree-info {
+  display: flex;
+  transition:300ms;
+  align-items:center;
+}
+
+.initial-tree-info:hover {
+  background:white;
+}
+
+.initial-tree-info.active {
+  height:0;
+  overflow: hidden;
+}
+
+
+
+.supplemental-tree-info {
+  display:none;
+  width:100vw;
+  height:100vh;
+  position: fixed;
+  top:0;
+  left:0;
+  z-index: 9999;
+  background: cyan;
+  transition:300ms;
+  overflow-y: scroll;
+  padding:2em;
+}
+
+.supplemental-tree-info p:nth-child(1n+0) {
+  animation-name: build-in-rise-1d;
+  animation-duration: 300ms;
+  animation-fill-mode: both;
+
+}
+
+.supplemental-tree-info p:nth-child(2) {
+  animation-delay: 100ms;
+}
+
+.supplemental-tree-info p:nth-child(3) {
+  animation-delay: 200ms;
+}
+
+.supplemental-tree-info p:nth-child(4) {
+  animation-delay: 300ms;
+}
+
+.supplemental-tree-info p:nth-child(5) {
+  animation-delay: 400ms;
+}
+
+.supplemental-tree-info p:nth-child(6) {
+  animation-delay: 500ms;
+}
+
+.supplemental-tree-info p:nth-child(7) {
+  animation-delay: 600ms;
+}
+
+.supplemental-tree-info p:nth-child(8) {
+  animation-delay: 700ms;
+}
+
+.supplemental-tree-info p:nth-child(9) {
+  animation-delay: 800ms;
+}
+
+.supplemental-tree-info p:nth-child(10){
+  animation-delay: 900ms;
+}
+
+
+
+.supplemental-tree-info.active {
+  display: block;
+}
+
+input.search {
+  width: 95%;
+  margin: 0 0 1em 0;
+  background: none;
+  border:none;
+  border-bottom: 2px solid blue;
+  height: 3.5em;
+  padding: 0 1em;
+  color: blue;
+}
+
+input.search,.btn-outline {
+  font-size: 16px;
+}
+
+input.search::placeholder {
+  color:blue;
+}
+
+.search-wrapper {
+  padding:0;
+  text-align: center;
+  margin-top: 1em;
+  margin-bottom: .3em
+}
+
+.btn-outline {
+  border :2px solid blue;
+  background:none;
+  color:blue;
+  padding:1em;
+  border-radius: 100px;
+  transition: 300ms;
+  width:47%;
+  margin:1%;
+}
+
+.btn-outline:hover {
+  border :2px solid blue;
+  background:blue;
+  color:white;
+}
+
+ul#barGuildMemberList.list.list-reset.bb1 {
+  border:none;
+}
+
+p.leafgrowth, p.longevity {
+  font-family: knockout;
+  font-size: 72px;
+  font-weight: 100;
 }
 
