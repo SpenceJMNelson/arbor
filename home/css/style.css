@@ -712,6 +712,9 @@ p.leafgrowth, p.longevity {
   animation-fill-mode: both;
   animation-iteration-count: infinite; }
 
+.showleafcontent, .showfruitcontent, .showflowercontent {
+  cursor: pointer; }
+
 .icon.seed {
   position: relative;
   display: inline-block;

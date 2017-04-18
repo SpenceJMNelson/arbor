@@ -820,6 +820,10 @@ border-color: transparent transparent $figure transparent;
   animation-iteration-count:infinite;
 }
 
+.showleafcontent, .showfruitcontent, .showflowercontent {
+  cursor: pointer;
+}
+
 .icon.seed {
   position:relative;
   display: inline-block;
