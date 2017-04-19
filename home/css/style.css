@@ -24,7 +24,7 @@ body {
   background: #7bfab8;
   overflow: hidden;
   color: blue;
-  font-family: 'Playfair Display', serif;
+  font-family: 'Sentinel', serif;
   font-weight: 100; }
 
 .branding {
@@ -683,7 +683,7 @@ ul#barGuildMemberList.list.list-reset.bb1 {
   border: none; }
 
 p.leafgrowth, p.longevity {
-  font-family: 'Six Caps', sans-serif;
+  font-family: 'Knockout', sans-serif;
   font-size: 5.5rem;
   font-weight: 100; }
 
