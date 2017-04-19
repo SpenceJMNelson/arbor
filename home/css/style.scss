@@ -3,12 +3,44 @@ $ground: #7bfab8;
 $fruit: #de4999;
 $flower: white;
 
+@font-face {
+    font-family: Knockout;
+    src: url(../fonts/Knockout-26.otf);
+    font-weight:400;
+}
+
+@font-face {
+    font-family: Sentinel;
+    src: url(../fonts/Sentinel-Light.otf);
+    font-weight:100;
+}
+
+@font-face {
+    font-family: Sentinel;
+    src: url(../fonts/Sentinel-Light.otf);
+    font-weight:100;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: Sentinel;
+    src: url(../fonts/Sentinel-Book.otf);
+    font-weight:400;
+}
+
+@font-face {
+    font-family: Sentinel;
+    src: url(../fonts/Sentinel-BookItalic.otf);
+    font-weight:400;
+    font-style: italic;
+}
+
 
 body {
   background:$ground;
   overflow:hidden;
   color:$figure;
-  font-family: sentinel;
+  font-family: 'Playfair Display', serif;
   font-weight: 100;
 
 }
@@ -771,7 +803,7 @@ ul#barGuildMemberList.list.list-reset.bb1 {
 }
 
 p.leafgrowth, p.longevity {
-  font-family: knockout;
+  font-family: 'Six Caps', sans-serif;
   font-size: 5.5rem;
   font-weight: 100;
 }
