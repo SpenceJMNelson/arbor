@@ -10,7 +10,8 @@
   <title>Arbor</title>
   <link rel="stylesheet" href="css/style.css">
   <link href="https://fonts.googleapis.com/css?family=Playfair+Display|Six+Caps" rel="stylesheet">
-
+  <script src='https://api.mapbox.com/mapbox-gl-js/v0.36.0/mapbox-gl.js'></script>
+<link href='https://api.mapbox.com/mapbox-gl-js/v0.36.0/mapbox-gl.css' rel='stylesheet' />
   
 </head>
 
@@ -266,16 +267,40 @@
 </div>
 
 <div class="site-view think-view">
-  <div class="view-content-wrapper">
-    <h3>Arbor:</h3> 
-    <h2>Discover Trees</h2> 
-    <p>
-    The idea for this project came out of two interests. The first being a simple fascination with the multitude of species of trees encountered in urban environments, originating from all over the world. Native species like the oaks and Maples, and Sycamore, and introduced species like Goldenrain, Crepe Myrtle, and Tree of Paradise mark our cities.
-    </p>
-    <p>
-    The second is the more esoteric goal of instilling a sense of longer spans of time. By viewing the growth of trees highly accelerated, one can begin to imagine the trees in the real world as following the same motions over a much longer timescale. Much of the ways humans impact the planet can’t be felt from one year to the next, so in order for people to feel compelled to change their behavior, they first need to perceive longer spans of time.
-    </p>
-  </div>
+
+    <div id='map' style='width: 100vw; height: 100vh;'></div>
+<script>
+mapboxgl.accessToken = 'pk.eyJ1Ijoic3BlbmNlam1uZWxzb24iLCJhIjoiZWZLZ0QyVSJ9.vC2qE7wklHtTcmnLoErfbA';
+var map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/spencejmnelson/cj1z9sokp000u2ro4av9zk7b7'
+
+
+});
+
+
+map.addControl(new mapboxgl.GeolocateControl());
+
+map.on('click', function(e) {
+  var features = map.queryRenderedFeatures(e.point, {
+    layers: ['streettrees'] // replace this with the name of the layer
+  });
+
+  if (!features.length) {
+    return;
+  }
+
+  var feature = features[0];
+
+  var popup = new mapboxgl.Popup({ offset: [0, -15] })
+    .setLngLat(feature.geometry.coordinates)
+    .setHTML('<h3>' + feature.properties.namecommon + '</h3><p>' + feature.properties.namescientific + '</p>')
+    .setLngLat(feature.geometry.coordinates)
+    .addTo(map);
+});
+
+</script>
+
 </div>
 
 <div class="bottom-navigation">
