@@ -15,7 +15,7 @@
   
 </head>
 
-<body class="mainbody">
+<body>
   <div class="branding">
     <div class="logotype">
     <h1>Arbor</h1>
@@ -72,25 +72,6 @@
                     <img class="leafimage" src="img/tree-images/{{gsx$treenamesci.$t}}/leaf.jpg"/>
                   </div>
                 </div>
-                {{#gsx$isconifer.$t}}
-                  <div class="arbor-col-1-2 backgroundcolor showflowercontent">
-                  <h6><span class="icon cone"></span> Cone</h6>
-                  <div class="arbor-row">
-                    <div class="arbor-col-1-2 backgroundcolor">
-                      <div class="color-image-wrapper">
-                        <img class="leafimage" src="img/tree-images/{{gsx$treenamesci.$t}}/cone-male.jpg"/>
-                      </div>
-                    </div>
-                    <div class="arbor-col-1-2 backgroundcolor">
-                      <div class="color-image-wrapper">
-                        <img class="leafimage" src="img/tree-images/{{gsx$treenamesci.$t}}/cone-female.jpg"/>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                {{/gsx$isconifer.$t}}
-
-                {{^gsx$isconifer.$t}}
                 <div class="arbor-col-1-4 backgroundcolor showfruitcontent">
                   <h6><span class="icon seed"></span> Fruit</h6>
                   <div class="color-image-wrapper">
@@ -112,7 +93,6 @@
                     </div>
                   </div>
                 </div>
-                {{/gsx$isconifer.$t}}
               </div>
 
               <div class="arbor-row">
@@ -148,12 +128,14 @@
               <div class="tertiary-tree-info">
                 <h3><a class="backbutton tosecondary" href="#">{{gsx$treenamestd.$t}} &middot; <em>{{gsx$treenamesci.$t}}</em></a></h3> 
                 <h2><a class="tertiarynav-link active tertiarynav-link-leaf" href="#">Leaf</a> 
-                {{#gsx$isconifer.$t}}
-                &middot; <a class="tertiarynav-link tertiarynav-link-cone" href="#">Cone</a>
-                {{/gsx$isconifer.$t}}
                 {{^gsx$isconifer.$t}}
+                &middot; <a class="tertiarynav-link tertiarynav-link-fruit" href="#">Cone</a>
+                {{/gsx$isconifer.$t}}
+                {{#gsx$isconifer.$t}}
                 &middot; <a class="tertiarynav-link tertiarynav-link-fruit" href="#">Fruit</a> &middot; <a class="tertiarynav-link tertiarynav-link-flower" href="#">Flower</a></h2> 
                 {{/gsx$isconifer.$t}}
+                
+
 
                   <div class="tertiary-content leaf-content active">
                     <div class="arbor-row">
@@ -219,11 +201,85 @@
 </div>
 
   <div class="field">
-    
+    <div class="tree deciduous">
+      
+      <div class="trunk">
+        <div class="branch level-1">
+          <div class="branch level-2">
+            <div class="branch level-3">
+              <div class="branch level-4"><div class="leaf"></div><div class="seed"></div><div class="flower"></div></div>
+              <div class="branch level-4"><div class="leaf"></div><div class="seed"></div><div class="flower"></div></div>
+            <div class="leaf"></div><div class="seed"></div><div class="flower"></div></div>
+            <div class="branch level-3">
+              <div class="branch level-4"><div class="leaf"></div><div class="seed"></div><div class="flower"></div></div>
+              <div class="branch level-4"><div class="leaf"></div><div class="seed"></div><div class="flower"></div></div>
+            <div class="leaf"></div><div class="seed"></div><div class="flower"></div></div>
+          <div class="leaf"></div><div class="seed"></div><div class="flower"></div></div>
+          <div class="branch level-2">
+            <div class="branch level-3">
+              <div class="branch level-4"><div class="leaf"></div><div class="seed"></div><div class="flower"></div></div>
+              <div class="branch level-4"><div class="leaf"></div><div class="seed"></div><div class="flower"></div></div>
+            <div class="leaf"></div><div class="seed"></div><div class="flower"></div></div>
+            <div class="branch level-3">
+              <div class="branch level-4"><div class="leaf"></div><div class="seed"></div><div class="flower"></div></div>
+              <div class="branch level-4"><div class="leaf"></div><div class="seed"></div><div class="flower"></div></div>
+            <div class="leaf"></div><div class="seed"></div><div class="flower"></div></div>
+          <div class="leaf"></div><div class="seed"></div><div class="flower"></div></div>
+        <div class="leaf"></div><div class="seed"></div><div class="flower"></div></div>
+        <div class="branch level-1">
+          <div class="branch level-2">
+            <div class="branch level-3">
+              <div class="branch level-4"><div class="leaf"></div><div class="seed"></div><div class="flower"></div></div>
+              <div class="branch level-4"><div class="leaf"></div><div class="seed"></div><div class="flower"></div></div>
+            <div class="leaf"></div><div class="seed"></div><div class="flower"></div></div>
+            <div class="branch level-3">
+              <div class="branch level-4"><div class="leaf"></div><div class="seed"></div><div class="flower"></div></div>
+              <div class="branch level-4"><div class="leaf"></div><div class="seed"></div><div class="flower"></div></div>
+            <div class="leaf"></div><div class="seed"></div><div class="flower"></div></div>
+          <div class="leaf"></div><div class="seed"></div><div class="flower"></div></div>
+          <div class="branch level-2">
+            <div class="branch level-3">
+              <div class="branch level-4"><div class="leaf"></div><div class="seed"></div><div class="flower"></div></div>
+              <div class="branch level-4"><div class="leaf"></div><div class="seed"></div><div class="flower"></div></div>
+            <div class="leaf"></div><div class="seed"></div><div class="flower"></div></div>
+            <div class="branch level-3">
+              <div class="branch level-4"><div class="leaf"></div><div class="seed"></div><div class="flower"></div></div>
+              <div class="branch level-4"><div class="leaf"></div><div class="seed"></div><div class="flower"></div></div>
+            <div class="leaf"></div><div class="seed"></div><div class="flower"></div></div>
+          <div class="leaf"></div><div class="seed"></div><div class="flower"></div></div>
+        <div class="leaf"></div><div class="seed"></div><div class="flower"></div></div>
+        <div class="branch level-1">
+          <div class="branch level-2">
+            <div class="branch level-3">
+              <div class="branch level-4"><div class="leaf"></div><div class="seed"></div><div class="flower"></div></div>
+              <div class="branch level-4"><div class="leaf"></div><div class="seed"></div><div class="flower"></div></div>
+            <div class="leaf"></div><div class="seed"></div><div class="flower"></div></div>
+            <div class="branch level-3">
+              <div class="branch level-4"><div class="leaf"></div><div class="seed"></div><div class="flower"></div></div>
+              <div class="branch level-4"><div class="leaf"></div><div class="seed"></div><div class="flower"></div></div>
+            <div class="leaf"></div><div class="seed"></div><div class="flower"></div></div>
+          <div class="leaf"></div><div class="seed"></div><div class="flower"></div></div>
+          <div class="branch level-2">
+            <div class="branch level-3">
+              <div class="branch level-4"><div class="leaf"></div><div class="seed"></div><div class="flower"></div></div>
+              <div class="branch level-4"><div class="leaf"></div><div class="seed"></div><div class="flower"></div></div>
+            <div class="leaf"></div><div class="seed"></div><div class="flower"></div></div>
+            <div class="branch level-3">
+              <div class="branch level-4"><div class="leaf"></div><div class="seed"></div><div class="flower"></div></div>
+              <div class="branch level-4"><div class="leaf"></div><div class="seed"></div><div class="flower"></div></div>
+            <div class="leaf"></div><div class="seed"></div><div class="flower"></div></div>
+          <div class="leaf"></div><div class="seed"></div><div class="flower"></div></div>
+        <div class="leaf"></div><div class="seed"></div><div class="flower"></div></div>
+      </div>
+
+    </div>
   </div>
 </div>
 
 <div class="site-view think-view">
+{{#.}}
+<p>{{gsx$treenamesci.$t}}</p>
+{{/.}}
 
     <div id='map' style='width: 100vw; height: 100vh;'></div>
 <script>
@@ -254,6 +310,10 @@ map.on('click', function(e) {
     .setHTML('<h3>' + feature.properties.namecommon + '</h3><p>' + feature.properties.namescientific + '</p>')
     .setLngLat(feature.geometry.coordinates)
     .addTo(map);
+});
+
+marker.on('click', function(e){
+    map.setView([e.latlng.lat, e.latlng.lng], 12);
 });
 
 </script>

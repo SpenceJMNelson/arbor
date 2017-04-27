@@ -1,8 +1,8 @@
-$( document ).ready(function() {
+/* $( document ).ready(function() {
     $( ".branch" ).append('<div class="leaf"></div><div class="seed"></div><div class="flower"></div>');
     
 
-});
+}); */
 
 $(document.body).on('click', '.initial-tree-info' ,function(){
         $(this).siblings(".supplemental-tree-info").addClass( "active" );
@@ -109,4 +109,45 @@ $.getJSON('https://spreadsheets.google.com/feeds/list/1Q36E8DgVodL97kdDYEyx-jlRh
 
   var listy = new List('memberWrapper', options);
   
+});
+
+
+$( document ).ready(function() {
+    $(function(){
+    $(".play-view").click(function(e){
+        var x = e.pageX + 'px';
+        var y = e.pageY + 'px';
+        var tree = $('<div class="tree deciduous"> <div class="trunk"> <div class="branch level-1"> <div class="branch level-2"> <div class="branch level-3"> <div class="branch level-4"><div class="leaf"></div><div class="seed"></div><div class="flower"></div></div><div class="branch level-4"><div class="leaf"></div><div class="seed"></div><div class="flower"></div></div><div class="leaf"></div><div class="seed"></div><div class="flower"></div></div><div class="branch level-3"> <div class="branch level-4"><div class="leaf"></div><div class="seed"></div><div class="flower"></div></div><div class="branch level-4"><div class="leaf"></div><div class="seed"></div><div class="flower"></div></div><div class="leaf"></div><div class="seed"></div><div class="flower"></div></div><div class="leaf"></div><div class="seed"></div><div class="flower"></div></div><div class="branch level-2"> <div class="branch level-3"> <div class="branch level-4"><div class="leaf"></div><div class="seed"></div><div class="flower"></div></div><div class="branch level-4"><div class="leaf"></div><div class="seed"></div><div class="flower"></div></div><div class="leaf"></div><div class="seed"></div><div class="flower"></div></div><div class="branch level-3"> <div class="branch level-4"><div class="leaf"></div><div class="seed"></div><div class="flower"></div></div><div class="branch level-4"><div class="leaf"></div><div class="seed"></div><div class="flower"></div></div><div class="leaf"></div><div class="seed"></div><div class="flower"></div></div><div class="leaf"></div><div class="seed"></div><div class="flower"></div></div><div class="leaf"></div><div class="seed"></div><div class="flower"></div></div><div class="branch level-1"> <div class="branch level-2"> <div class="branch level-3"> <div class="branch level-4"><div class="leaf"></div><div class="seed"></div><div class="flower"></div></div><div class="branch level-4"><div class="leaf"></div><div class="seed"></div><div class="flower"></div></div><div class="leaf"></div><div class="seed"></div><div class="flower"></div></div><div class="branch level-3"> <div class="branch level-4"><div class="leaf"></div><div class="seed"></div><div class="flower"></div></div><div class="branch level-4"><div class="leaf"></div><div class="seed"></div><div class="flower"></div></div><div class="leaf"></div><div class="seed"></div><div class="flower"></div></div><div class="leaf"></div><div class="seed"></div><div class="flower"></div></div><div class="branch level-2"> <div class="branch level-3"> <div class="branch level-4"><div class="leaf"></div><div class="seed"></div><div class="flower"></div></div><div class="branch level-4"><div class="leaf"></div><div class="seed"></div><div class="flower"></div></div><div class="leaf"></div><div class="seed"></div><div class="flower"></div></div><div class="branch level-3"> <div class="branch level-4"><div class="leaf"></div><div class="seed"></div><div class="flower"></div></div><div class="branch level-4"><div class="leaf"></div><div class="seed"></div><div class="flower"></div></div><div class="leaf"></div><div class="seed"></div><div class="flower"></div></div><div class="leaf"></div><div class="seed"></div><div class="flower"></div></div><div class="leaf"></div><div class="seed"></div><div class="flower"></div></div><div class="branch level-1"> <div class="branch level-2"> <div class="branch level-3"> <div class="branch level-4"><div class="leaf"></div><div class="seed"></div><div class="flower"></div></div><div class="branch level-4"><div class="leaf"></div><div class="seed"></div><div class="flower"></div></div><div class="leaf"></div><div class="seed"></div><div class="flower"></div></div><div class="branch level-3"> <div class="branch level-4"><div class="leaf"></div><div class="seed"></div><div class="flower"></div></div><div class="branch level-4"><div class="leaf"></div><div class="seed"></div><div class="flower"></div></div><div class="leaf"></div><div class="seed"></div><div class="flower"></div></div><div class="leaf"></div><div class="seed"></div><div class="flower"></div></div><div class="branch level-2"> <div class="branch level-3"> <div class="branch level-4"><div class="leaf"></div><div class="seed"></div><div class="flower"></div></div><div class="branch level-4"><div class="leaf"></div><div class="seed"></div><div class="flower"></div></div><div class="leaf"></div><div class="seed"></div><div class="flower"></div></div><div class="branch level-3"> <div class="branch level-4"><div class="leaf"></div><div class="seed"></div><div class="flower"></div></div><div class="branch level-4"><div class="leaf"></div><div class="seed"></div><div class="flower"></div></div><div class="leaf"></div><div class="seed"></div><div class="flower"></div></div><div class="leaf"></div><div class="seed"></div><div class="flower"></div></div><div class="leaf"></div><div class="seed"></div><div class="flower"></div></div></div></div>').css({
+            "position": "absolute",                    
+            "left": x,
+            "top": y
+        });
+
+        $(".field").append(tree);        
+    });
+    });
+});
+
+$( document ).ready(function() {
+      jQuery.fn.rotateClasses = function(classes, interval, max) {
+    var currentRotation = 1;
+    var timer = null;
+    var rotateFn = function() {
+        var len = classes.length;
+        var cycle = currentRotation++ % len;
+        this.each(function(id,div){
+            $(div).removeClass().addClass(classes[(cycle+id)%len]);
+        });
+
+        if(max > 0 && currentRotation > max) clearInterval(timer);
+    };
+
+    timer = setInterval(rotateFn.bind($(this)), interval);
+
+    return this;
+};
+
+
+$('.mainbody').rotateClasses(["spring", "springsummer", "summer", "summerfall", "fall", "fallwinter", "winter", "winterspring"], 2000, 1000)
+
 });

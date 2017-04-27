@@ -86,6 +86,10 @@ p {
   transform-style: preserve-3d;
   pointer-events: none; }
 
+.site-view.play-view{
+  overflow:hidden;
+}
+
 .site-view.explore-view {
   transform: scale(0.9) translateZ(-100px) translateX(-20%); }
 
@@ -640,8 +644,8 @@ input.search {
   background: none;
   border: none;
   border-bottom: 2px solid blue;
-  height: 54px;
-  padding-bottom: 10px;
+  height: 2em;
+  padding:0;
   color: blue;
   font-family: sentinel;
   font-weight: 100;
@@ -794,8 +798,8 @@ html {
   html {
     font-size: 14px; } }
 @media screen and (min-width: 1280px) {
-  * {
+  html {
     font-size: 16px; } }
 @media screen and (min-width: 1400px) {
-  * {
+  html {
     font-size: 21px; } }
