@@ -148,6 +148,41 @@ $( document ).ready(function() {
 };
 
 
-$('.mainbody').rotateClasses(["spring", "springsummer", "summer", "summerfall", "fall", "fallwinter", "winter", "winterspring"], 2000, 1000)
+$('.mainbody').rotateClasses(["winterspring", "spring", "springsummer", "summer", "summerfall", "fall", "fallwinter", "winter"], 2500, 1250)
 
 });
+
+
+$(document).ready(function() {
+
+      var audio = document.getElementById("note-1-file");
+      audio.volume = 0;
+      $( "#note-1" ).click(function() {
+        $('#note-1-file').prop('volume', 1);
+      });
+
+      var audio = document.getElementById("note-2-file");
+      audio.volume = 0;
+      $( "#note-2" ).click(function() {
+        $('#note-2-file').prop('volume', 1);
+      });
+
+      var audio = document.getElementById("note-3-file");
+      audio.volume = 0;
+      $( "#note-3" ).click(function() {
+        $('#note-3-file').prop('volume', 1);
+      });
+
+      var audio = document.getElementById("note-4-file");
+      audio.volume = 0;
+      $( "#note-4" ).click(function() {
+        $('#note-4-file').prop('volume', 1);
+      });
+
+      var audio = document.getElementById("note-5-file");
+      audio.volume = 0;
+      $( "#note-5" ).click(function() {
+        $('#note-5-file').prop('volume', 1);
+      });
+
+    });

@@ -8,7 +8,7 @@
   font-weight: 100; }
 @font-face {
   font-family: Sentinel;
-  src: url(../fonts/Sentinel-Light.otf);
+  src: url(../fonts/Sentinel-LightItalic.otf);
   font-weight: 100;
   font-style: italic; }
 @font-face {
@@ -27,6 +27,29 @@ body {
   font-family: 'Sentinel', serif;
   font-weight: 100; }
 
+.female, .male {
+  position:relative;
+  
+}
+
+.female:before {
+  content:"\2640";
+  
+
+}
+
+.male:before {
+  content:"\2642";
+  
+}
+
+.female:before, .male:before {
+  top:-30px;
+  left:-30px;
+  
+
+}
+
 .branding {
   position: absolute;
   color: #de4999;
@@ -35,7 +58,7 @@ body {
   transform: translateX(-50%) translateY(-50%) translateZ(300px);
   text-align: center; }
 
-.logotype h1 {
+.logotype > * {
   animation-name: build-in-rise;
   animation-duration: 5s;
   animation-fill-mode: both;
@@ -90,8 +113,25 @@ p {
   overflow:hidden;
 }
 
+.play-view .xylophone {
+  position:absolute;
+  height:100vh;
+  width:100vw;
+  top:0;
+  left:0;
+}
+
+
+.play-view .xylophone .note{
+  height:20vh;
+  width:100vw;
+}
+
+
 .site-view.explore-view {
-  transform: scale(0.9) translateZ(-100px) translateX(-20%); }
+  transform: scale(0.9) translateZ(-100px) translateX(-20%); 
+  overflow:hidden;
+}
 
 .site-view.think-view {
   transform: scale(0.9) translateZ(-100px) translateX(20%); }
@@ -110,7 +150,13 @@ p {
   left: 50%;
   transform: translateX(-50%) translateZ(100px);
   text-align: center;
-  min-width: 200px; }
+  min-width: 200px; 
+  transition:300ms;
+  border-radius: 100px;
+  background:#7bfab8;
+}
+
+
 
 .bottom-navigation a {
   width: 40px;
@@ -146,9 +192,9 @@ p {
 /* ANIMATIONS */
 @keyframes slowsspin {
   from {
-    transform: rotateX(-30deg) rotateY(0deg); }
+    transform: rotateX(65deg) rotateY(0deg) rotateZ(0deg) translateZ(20vw); }
   to {
-    transform: rotateX(-30deg) rotateY(-360deg); } }
+    transform: rotateX(65deg) rotateY(0deg) rotateZ(360deg) translateZ(20vw); } }
 @keyframes build-in-rise {
   0% {
     transform: translateY(50%);
@@ -167,11 +213,16 @@ p {
     height: 0%; }
   to {
     height: 60%; } }
+
+    
 @keyframes growtree {
   from {
-    transform: scale(0); }
+    transform: rotateX(-90deg) scale(0); }
   to {
-    transform: scale(1); } }
+    transform: rotateX(-90deg) scale(1); } }
+
+
+
 @keyframes growtree-compensate {
   from {
     width: 20%; }
@@ -249,6 +300,15 @@ p {
     transform: translateY(0%);
     opacity: 1; } }
 /* PLAY */
+
+
+@keyframes treeelementappear {
+  from {
+    visibility:hidden; }
+  to {
+    visibility:visible; } }
+
+
 .timekeeping {
   position: relative;
   width: 100px;
@@ -292,28 +352,33 @@ p {
   position: absolute; }
 
 .field {
-  position: relative;
-  width: 100vw;
-  height: 50vh;
-  transform: rotateX(30deg) rotateY(-30deg);
-  transform-style: preserve-3d;
-  animation-name: slowsspin;
-  animation-duration: 48s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  pointer-events: none; }
+  position: absolute;
+top:0;
+width: 100vw;
+height: 100vw;
+transform: rotateX(65deg) rotateY(0deg) rotateZ(45deg) translateZ(20vw);
+transform-style: preserve-3d;
+animation-name: slowsspin;
+transform-origin: center center;
+animation-timing-function: linear;
+animation-duration: 96s;
+animation-iteration-count: infinite;
+pointer-events: none;
+}
 
 .tree {
   width: 70px;
   height: 250px;
   position: absolute;
-  top: 50%;
+  bottom: 50%;
   left: 50%;
-  transform-style: preserve-3d;
+  transform-origin: 100% 100%;
   animation-name: growtree;
+  transform-style: preserve-3d;
+  transform: rotateX(-90deg) scale(1);
   animation-duration: 40s;
   animation-fill-mode: both;
-  animation-timing-function: ease-out; }
+  animation-timing-function: ease-out;}
 
 .trunk {
   width: 20%;
@@ -347,7 +412,16 @@ p {
   animation-duration: 12s;
   animation-fill-mode: both; }
 
+  .leaf, .seed, .flower {
+    animation-name: treeelementappear;
+    animation-duration: 300ms;
+    animation-fill-mode: both;
+    opacity:0:
+  }
+
+
 .branch.level-1, .branch.level-1 .leaf, .branch.level-1 .seed, .branch.level-1 .flower {
+  
   animation-delay: 5s; }
 
 .branch.level-2, .branch.level-2 .leaf, .branch.level-2 .seed, .branch.level-2 .flower {
@@ -382,10 +456,45 @@ p {
   border-color: transparent transparent blue transparent;
   margin-top: -20px;
   margin-left: -20px;
-  animation-name: leafactivity;
+  transition:2s;
+  /* animation-name: leafactivity;
   animation-duration: 12s;
   animation-fill-mode: both;
-  animation-iteration-count: infinite; }
+  animation-iteration-count: infinite; */}
+
+   
+
+  .winterspring .leaf {
+  transform: scale(0) translateX(0%) rotateX(30deg);
+    opacity: 1; }
+
+  .spring .leaf {
+  transform: scale(0) translateX(0%) rotateX(30deg);
+    opacity: 1; }
+
+  .springsummer .leaf {
+  transform: scale(1) translateX(0%) rotateX(30deg);
+    opacity: 1; }
+
+  .summer .leaf {
+  transform: scale(1) translateX(0%) rotateX(30deg);
+    opacity: 1; }
+
+  .summerfall .leaf {
+  transform: scale(1) translateX(0%) rotateX(30deg);
+    opacity: .5; }
+
+  .fall .leaf {
+  transform: scale(1) translateX(300%) rotateX(-30deg);
+    opacity: 0; }
+
+  .fallwinter .leaf {
+  transform: scale(1) translateX(300%) rotateX(-30deg);
+    opacity: 0; }
+
+  .winter .leaf {
+  transform: scale(0) translateX(0%) rotateX(30deg);
+    opacity: 0; }
 
 .branch .flower {
   position: absolute;
@@ -395,10 +504,32 @@ p {
   margin-top: -5px;
   height: 10px;
   background-color: white;
-  animation-name: floweractivity;
-  animation-duration: 12s;
-  animation-fill-mode: both;
-  animation-iteration-count: infinite; }
+  transition:1s; 
+}
+
+  .winterspring .flower {
+  opacity:1; }
+
+  .spring .flower {
+  opacity:1; }
+
+  .springsummer .flower {
+  opacity:0; }
+
+  .summer .flower {
+  opacity:0; }
+
+  .summerfall .flower {
+  opacity:0; }
+
+  .fall .flower {
+  opacity:0; }
+
+  .fallwinter .flower {
+  opacity:0; }
+
+  .winter .flower {
+  opacity:0; }
 
 .branch .seed {
   position: absolute;
@@ -408,12 +539,14 @@ p {
   transform: rotateX(30deg) rotateY(30deg);
   height: 20px;
   background-color: #de4999;
-  animation-name: seedactivity;
+  /* animation-name: seedactivity;
   animation-duration: 12s;
   animation-fill-mode: both;
-  animation-iteration-count: infinite;
+  animation-iteration-count: infinite; */
   border-radius: 100%;
-  transform-style: preserve-3d; }
+  transform-style: preserve-3d; 
+  transition:1s;
+}
 
 .branch .seed:after {
   content: "";
@@ -423,6 +556,30 @@ p {
   height: 20px;
   background-color: #de4999;
   border-radius: 100%; }
+
+  .winterspring .seed {
+  opacity:0; }
+
+  .spring .seed {
+  opacity:0; }
+
+  .springsummer .seed {
+  opacity:0; }
+
+  .summer .seed {
+  opacity:0; }
+
+  .summerfall .seed {
+  opacity:1; }
+
+  .fall .seed {
+  opacity:1; }
+
+  .fallwinter .seed {
+  opacity:0; }
+
+  .winter .seed {
+  opacity:0; }
 
 .branch::before {
   content: "";
@@ -535,12 +692,31 @@ p {
 
 .initial-tree-info {
   display: flex;
+  flex-grow: 4;
   align-items: center;
   background: #7bfab8;
-  animation-name: build-in-rise-1d;
-  animation-duration: 300ms;
   cursor: pointer;
-  position: relative; }
+  position: relative;
+  overflow:hidden; 
+  transition:300ms;
+  height:20vw;
+}
+
+.initial-tree-info h6{
+  margin:0 0 1em 0;
+}
+
+.mapboxgl-popup-content {
+  font-family: Sentinel;
+}
+
+.initial-tree-info > * {
+  width:25%;
+}
+
+.initial-tree-info .leafimage {
+  width:100%;
+}
 
 .initial-tree-info:after {
   content: "+";
@@ -550,10 +726,25 @@ p {
   font-size: 2.1rem;
   border: 2px solid blue;
   border-radius: 100%;
-  padding: .25em .6em; }
+  padding: 0em .33em;
+  transform:translateY(-50%);
+  transition: 300ms;
+}
+
+.initial-tree-info:hover:after {
+  content: "+";
+  color:white;
+  border: 2px solid white;
+  transition: 0ms;
+}
 
 .initial-tree-info:hover {
-  opacity: .6; }
+  color:white;
+  transition: 0ms;
+}
+
+
+
 
 .initial-tree-info.active {
   display: none; }
@@ -644,13 +835,14 @@ input.search {
   background: none;
   border: none;
   border-bottom: 2px solid blue;
-  height: 2em;
+  height: 1.2em;
+  line-height: 1;
   padding:0;
   color: blue;
   font-family: sentinel;
   font-weight: 100;
   font-style: italic;
-  font-size: 3.4rem !important; }
+  font-size: 2.1rem !important; }
 
 .btn-outline {
   font-size: 12px;
@@ -685,6 +877,12 @@ input.search::placeholder {
 
 ul#barGuildMemberList.list.list-reset.bb1 {
   border: none; }
+
+  #barGuildMemberList {
+    overflow-y: scroll;
+    height:100vh;
+    padding-bottom:110px;
+  }
 
 p.leafgrowth, p.longevity {
   font-family: 'Knockout', sans-serif;
@@ -782,7 +980,10 @@ html {
     font-size: 8px; }
 
   .explore-nav {
-    display: flex; }
+    display: flex;
+    margin-bottom:2em; 
+    background: #7bfab8;
+  }
 
   .explore-nav .search-wrapper, .explore-nav .sort-wrapper {
     width: 50%;
