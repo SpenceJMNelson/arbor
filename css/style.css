@@ -64,6 +64,9 @@ body {
   animation-fill-mode: both;
   animation-delay: 1s; }
 
+  .logotype > h3 {
+  animation-delay: 12s; }
+
 h1, h2, h3, h4, h5, p {
   font-weight: 100;
   margin: 0; }
@@ -90,8 +93,8 @@ h6 {
   font-family: monospace; }
 
 p {
-  font-size: 18px;
-  line-height: 1.2; }
+  font-size: 21px;
+  line-height: 1.3; }
 
 .site-view {
   width: 100vw;
@@ -153,7 +156,7 @@ p {
   min-width: 200px; 
   transition:300ms;
   border-radius: 100px;
-  background:#7bfab8;
+  background:white;
 }
 
 
@@ -217,9 +220,36 @@ p {
     
 @keyframes growtree {
   from {
-    transform: rotateX(-90deg) scale(0); }
+    transform: rotateX(-90deg) rotateY(0deg) scale(0); }
   to {
-    transform: rotateX(-90deg) scale(1); } }
+    transform: rotateX(-90deg) rotateY(0deg) scale(1); } }
+
+
+@keyframes growtree-rotation-1 {
+  from {
+    transform: rotateX(-90deg) rotateY(-30deg) scale(0); }
+  to {
+    transform: rotateX(-90deg) rotateY(-30deg) scale(1); } }
+
+
+@keyframes growtree-rotation-2 {
+  from {
+    transform: rotateX(-90deg) rotateY(60deg) scale(0); }
+  to {
+    transform: rotateX(-90deg) rotateY(60deg) scale(1); } }
+
+    @keyframes growtree-rotation-3 {
+  from {
+    transform: rotateX(-90deg) rotateY(-60deg) scale(0); }
+  to {
+    transform: rotateX(-90deg) rotateY(-60deg) scale(1); } }
+
+
+    @keyframes growtree-intro {
+  from {
+    transform:  rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(.5) translateZ(200px) translateX(0%) translateY(-0%); opacity:0; }
+  to {
+    transform:  rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(.8) translateZ(200px) translateX(0%) translateY(-0%); opacity:1; } }
 
 
 
@@ -308,6 +338,12 @@ p {
   to {
     visibility:visible; } }
 
+    @keyframes introscreenfade {
+  from {
+    opacity:1; }
+  to {
+    opacity:0; } }
+
 
 .timekeeping {
   position: relative;
@@ -370,7 +406,7 @@ pointer-events: none;
   width: 70px;
   height: 250px;
   position: absolute;
-  bottom: 50%;
+  top: 50%;
   left: 50%;
   transform-origin: 100% 100%;
   animation-name: growtree;
@@ -378,7 +414,21 @@ pointer-events: none;
   transform: rotateX(-90deg) scale(1);
   animation-duration: 40s;
   animation-fill-mode: both;
-  animation-timing-function: ease-out;}
+  animation-timing-function: ease-out;
+
+}
+
+.tree:nth-child(2) {
+  animation-name: growtree-rotation-1;
+}
+
+.tree:nth-child(3) {
+  animation-name: growtree-rotation-2;
+}
+
+.tree:nth-child(4) {
+  animation-name: growtree-rotation-3;
+}
 
 .trunk {
   width: 20%;
@@ -699,7 +749,42 @@ pointer-events: none;
   position: relative;
   overflow:hidden; 
   transition:300ms;
-  height:20vw;
+  height: 24vw;
+}
+
+.intro-screen {
+  width:100vw;
+  top:0;
+  left:0;
+  height:100vh;
+  background:blue;
+  position: absolute;
+  z-index: 9999;
+  transform: translateZ(999px);
+  pointer-events: none;
+  /*animation-name:introscreenfade;*/
+  animation-duration: 500ms;
+  animation-delay:10s;
+  animation-fill-mode: both;
+}
+
+.intro-screen .tree {
+  transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(.7) translateZ(200px) translateX(-50%) translateY(-50%);
+  animation-name:growtree-intro;
+  animation-duration: 6s;
+  transform-origin: 10% 50%;
+}
+
+.intro-screen .trunk,.intro-screen .trunk:before,.intro-screen .branch,.intro-screen .branch:before {
+  background: #7bfab8;
+}
+
+.intro-screen .leaf{
+  border-color: transparent transparent #7bfab8 transparent;
+}
+
+.intro-screen .branch.level-1, .intro-screen .branch.level-1 .leaf, .intro-screen .branch.level-1 .seed, .intro-screen .branch.level-1 .flower,.intro-screen .branch.level-2, .intro-screen .branch.level-2 .leaf, .intro-screen .branch.level-2 .seed, .intro-screen .branch.level-2 .flower,.intro-screen .branch.level-3, .intro-screen .branch.level-3 .leaf, .intro-screen .branch.level-3 .seed, .intro-screen .branch.level-3 .flower,.intro-screen .branch.level-4,.intro-screen .branch.level-4 .leaf, .intro-screen .branch.level-4 .seed, .intro-screen .branch.level-4 .flower,.intro-screen .branch.level-5, .intro-screen .branch.level-4 .leaf, .intro-screen .branch.level-5 .seed, .intro-screen .branch.level-5 .flower {
+  animation-delay: 0s; 
 }
 
 .initial-tree-info h6{
@@ -763,7 +848,7 @@ pointer-events: none;
   -webkit-overflow-scrolling: touch;
   padding: 2em; }
 
-.supplemental-tree-info * {
+.supplemental-tree-info > * {
   animation-name: build-in-rise-1d;
   animation-duration: 400ms;
   animation-fill-mode: both; }
@@ -960,7 +1045,8 @@ p.leafgrowth, p.longevity {
   display: none; }
 
 .tertiary-content.active {
-  display: block; }
+  display: block; 
+}
 
 .tertiarynav-link {
   color: inherit;

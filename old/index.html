@@ -1,0 +1,151 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+        <!-- Place favicon.ico in the root directory -->
+
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/main.css">
+        <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <!-- Add your site or application content here -->
+        
+            
+
+        <div id="tree-field-wrapper">
+        <div class="tempxylophone">
+            <div class="tempxylophone-key tempxylophone-hi"></div>
+            <div class="tempxylophone-key tempxylophone-med"></div>
+            <div class="tempxylophone-key tempxylophone-lo"></div>
+
+        </div>
+            <div class="tree-field">
+
+
+
+            </div>
+        </div>
+
+
+
+        <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\/script>')</script>
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
+        <script src="js/tilt.jquery.js"></script>
+
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        <script>
+            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+            e.src='https://www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+            ga('create','UA-XXXXX-X','auto');ga('send','pageview');
+        </script>
+
+        <!--<script>
+            $('#tree-field-wrapper').tilt({
+                maxTilt:        10,
+                perspective:    9999,   // Transform perspective, the lower the more extreme the tilt gets.
+                easing:         "cubic-bezier(.03,.98,.52,.99)",    // Easing on enter/exit.
+                scale:          1,      // 2 = 200%, 1.5 = 150%, etc..
+                speed:          1000,    // Speed of the enter/exit transition.
+                transition:     true,   // Set a transition on enter/exit.
+                axis:           null,   // What axis should be disabled. Can be X or Y.
+                reset:          true,   // If the tilt effect has to be reset on exit.
+                glare:          false,  // Enables glare effect
+                maxGlare:       1       // From 0 - 1.
+
+            })
+
+            $(window).load(function(){
+$('.f3d1aeb2-e070-4847-abd4-c482491ccec6').css({'transition-delay' : (Math.random() * 1) + 's'})
+ });
+
+            
+        </script> -->
+
+        <audio id="beep-one" controls preload="auto" style="opacity:0;">
+    <source src="resources/highding.mp3" controls></source>
+    Your browser isn't invited for super fun audio time.
+</audio>
+
+<audio id="beep-two" controls preload="auto" style="opacity:0;">
+    <source src="resources/mediumding.mp3" controls></source>
+    Your browser isn't invited for super fun audio time.
+</audio>
+
+<audio id="beep-three" controls preload="auto" style="opacity:0;">
+    <source src="resources/lowding.mp3" controls></source>
+    Your browser isn't invited for super fun audio time.
+</audio>
+
+<audio id="ambient-sound" loop="loop" autoplay="autoplay" preload="auto">
+    <source src="resources/ambient-sound.mp3" controls></source>
+    Your browser isn't invited for super fun audio time.
+</audio>
+
+<script type="text/javascript">
+    
+
+$(".tempxylophone-lo")
+  .each(function(i) {
+    if (i != 0) { 
+      $("#beep-three")
+        .clone()
+        .attr("id", "beep-three" + i)
+        .appendTo($(this).parent()); 
+    }
+    $(this).data("beeper-three", i);
+  })
+  .click(function() {
+    $("#beep-three" + $(this).data("beeper-three"))[0].play();
+  });
+$("#beep-three").attr("id", "beep-three0");
+
+$(".tempxylophone-med")
+  .each(function(i) {
+    if (i != 0) { 
+      $("#beep-two")
+        .clone()
+        .attr("id", "beep-two" + i)
+        .appendTo($(this).parent()); 
+    }
+    $(this).data("beeper-two", i);
+  })
+  .click(function() {
+    $("#beep-two" + $(this).data("beeper-two"))[0].play();
+  });
+$("#beep-two").attr("id", "beep-two0");
+
+$(".tempxylophone-hi")
+  .each(function(i) {
+    if (i != 0) { 
+      $("#beep-one")
+        .clone()
+        .attr("id", "beep-one" + i)
+        .appendTo($(this).parent()); 
+    }
+    $(this).data("beeper-one", i);
+  })
+  .click(function() {
+    $("#beep-one" + $(this).data("beeper-one"))[0].play();
+  });
+$("#beep-one").attr("id", "beep-one0");
+
+</script>
+
+    </body>
+</html>
