@@ -60,12 +60,12 @@ body {
 
 .logotype > * {
   animation-name: build-in-rise;
-  animation-duration: 5s;
+  animation-duration: 12s;
   animation-fill-mode: both;
-  animation-delay: 1s; }
+  animation-delay: .1s; }
 
   .logotype > h3 {
-  animation-delay: 12s; }
+  animation-delay: 13s; }
 
 h1, h2, h3, h4, h5, p {
   font-weight: 100;
@@ -86,11 +86,23 @@ h4 {
   font-size: 1.3rem; }
 
 h6 {
-  margin: 2em 0;
+  margin: 3em 0 1em 0;
   text-transform: uppercase;
   font-weight: 300;
   font-size: 10px;
-  font-family: monospace; }
+  font-family: monospace; 
+  position: relative;
+
+}
+
+h6:before {
+  content:"";
+  position: absolute;
+  top:-1em;
+  width: 2em;
+  border-top:1px solid ;
+  
+}
 
 p {
   font-size: 21px;
@@ -133,7 +145,8 @@ p {
 
 .site-view.explore-view {
   transform: scale(0.9) translateZ(-100px) translateX(-20%); 
-  overflow:hidden;
+  overflow-y: scroll;
+overflow-x: hidden;
 }
 
 .site-view.think-view {
@@ -147,6 +160,9 @@ p {
 .view-content-wrapper {
   padding: 2em; }
 
+.explore-view .view-content-wrapper {
+  padding: 0em; }
+
 .bottom-navigation {
   position: absolute;
   bottom: 20px;
@@ -157,9 +173,12 @@ p {
   transition:300ms;
   border-radius: 100px;
   background:white;
+  box-shadow: 0px 0px 10px rgba(0,0,255,.2);
 }
 
-
+.info-text-wrapper {
+  padding-left:2em;
+}
 
 .bottom-navigation a {
   width: 40px;
@@ -247,9 +266,9 @@ p {
 
     @keyframes growtree-intro {
   from {
-    transform:  rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(.5) translateZ(200px) translateX(0%) translateY(-0%); opacity:0; }
+    transform:  rotateX(-90deg) rotateY(0deg) rotateZ(0deg) scale(.5) translateZ(-80px) translateX(0%) translateY(-0%); opacity:0; }
   to {
-    transform:  rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(.8) translateZ(200px) translateX(0%) translateY(-0%); opacity:1; } }
+    transform:  rotateX(-90deg) rotateY(0deg) rotateZ(0deg) scale(.8) translateZ(-90px) translateX(0%) translateY(-0%); opacity:1; } }
 
 
 
@@ -401,6 +420,8 @@ animation-duration: 96s;
 animation-iteration-count: infinite;
 pointer-events: none;
 }
+
+
 
 .tree {
   width: 70px;
@@ -762,20 +783,48 @@ pointer-events: none;
   z-index: 9999;
   transform: translateZ(999px);
   pointer-events: none;
-  /*animation-name:introscreenfade;*/
+  animation-name:introscreenfade;
   animation-duration: 500ms;
-  animation-delay:10s;
+  animation-delay:12s;
   animation-fill-mode: both;
+}
+
+.field-intro {
+  position: absolute;
+  top:50%;
+  left:50%;
+width: 100px;
+height: 100px;
+transform: rotateX(65deg) rotateY(0deg) rotateZ(45deg) translateZ(20vw);
+transform-style: preserve-3d;
+animation-name: slowsspin;
+transform-origin: 60px 80px;
+animation-timing-function: linear;
+animation-duration: 12s;
+animation-iteration-count: infinite;
+pointer-events: none;
+}
+
+.field-intro-offset {
+  position: absolute;
+  top:50%;
+  left:50%;
+width: 100px;
+height: 100px;
+transform: translateZ(500px) translateX(-100%) translateY(50%);
+transform-style: preserve-3d;
+
 }
 
 .intro-screen .tree {
   transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(.7) translateZ(200px) translateX(-50%) translateY(-50%);
   animation-name:growtree-intro;
   animation-duration: 6s;
+  animation-timing-function: ease;
   transform-origin: 10% 50%;
 }
 
-.intro-screen .trunk,.intro-screen .trunk:before,.intro-screen .branch,.intro-screen .branch:before {
+.intro-screen .trunk,.intro-screen .trunk:after,.intro-screen .branch,.intro-screen .branch:before {
   background: #7bfab8;
 }
 
@@ -793,7 +842,19 @@ pointer-events: none;
 
 .mapboxgl-popup-content {
   font-family: Sentinel;
+  padding:1em!important;
 }
+
+.mapboxgl-popup-content h3,.mapboxgl-popup-content p{
+  font-size: 36px;
+  margin:0;
+}
+
+.mapboxgl-popup-content p{
+  font-style: italic;
+}
+
+
 
 .initial-tree-info > * {
   width:25%;
@@ -964,19 +1025,20 @@ ul#barGuildMemberList.list.list-reset.bb1 {
   border: none; }
 
   #barGuildMemberList {
-    overflow-y: scroll;
-    height:100vh;
-    padding-bottom:110px;
   }
 
 p.leafgrowth, p.longevity {
   font-family: 'Knockout', sans-serif;
   font-size: 5.5rem;
-  font-weight: 100; }
+  font-weight: 100; 
+line-height: .6;
+margin-bottom: .8em;}
 
 .icon {
   font-family: monospace;
-  margin-right: 10px; }
+  margin-right: 10px;
+
+}
 
 .icon.leaf {
   position: relative;
@@ -988,23 +1050,28 @@ p.leafgrowth, p.longevity {
   border-color: transparent transparent blue transparent;
   margin-top: -20px;
   margin-bottom: -10px;
-  animation-name: leafactivity;
+  animation-name: none;
   animation-duration: 12s;
   animation-fill-mode: both;
-  animation-iteration-count: infinite; }
+  animation-iteration-count: infinite;
+  visibility: visible!important;
+  transform: scale(1) translateX(0%) rotateX(30deg)!important;
+  opacity:1!important; }
 
 .icon.flower {
   position: relative;
   display: inline-block;
   width: 20px;
-  margin-left: -5px;
+  margin-left: 0px;
   margin-bottom: -5px;
   height: 20px;
   background-color: white;
-  animation-name: floweractivity;
+  animation-name: none;
   animation-duration: 12s;
   animation-fill-mode: both;
-  animation-iteration-count: infinite; }
+  animation-iteration-count: infinite;
+  visibility: visible!important;
+  opacity:1!important; }
 
 .showleafcontent, .showfruitcontent, .showflowercontent {
   cursor: pointer; }
@@ -1013,16 +1080,18 @@ p.leafgrowth, p.longevity {
   position: relative;
   display: inline-block;
   width: 20px;
-  margin-left: -5px;
+  margin-left: 0px;
   margin-bottom: -5px;
   height: 20px;
   background-color: #de4999;
-  animation-name: seedactivity;
+  animation-name: none;
   animation-duration: 12s;
   animation-fill-mode: both;
   animation-iteration-count: infinite;
   border-radius: 100%;
-  transform-style: preserve-3d; }
+  transform-style: preserve-3d;
+  visibility: visible!important;
+  opacity:1!important; }
 
 .tertiary-tree-info {
   position: fixed;
@@ -1036,7 +1105,8 @@ p.leafgrowth, p.longevity {
   padding: 2em;
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
-  display: none; }
+  display: none;
+   }
 
 .tertiary-tree-info.active {
   display: block; }
@@ -1067,7 +1137,7 @@ html {
 
   .explore-nav {
     display: flex;
-    margin-bottom:2em; 
+    padding:2em;
     background: #7bfab8;
   }
 
