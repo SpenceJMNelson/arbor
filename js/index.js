@@ -88,6 +88,28 @@ $( document ).ready(function() {
 
 });
 
+
+$( document ).ready(function() {
+    $('#intro-navigation-link-discover').click(function(){
+      $(".intro-screen").fadeOut();
+      $("#explore-button").addClass('active').siblings('.active').removeClass('active');
+      $('.explore-view').addClass('active').siblings('.active').removeClass('active');
+  });
+
+  $('#intro-navigation-link-play').click(function(){
+      $(".intro-screen").fadeOut();
+      $("#play-button").addClass('active').siblings('.active').removeClass('active');
+      $('.play-view').addClass('active').siblings('.active').removeClass('active');
+  });
+
+  $('#intro-navigation-link-explore').click(function(){
+      $(".intro-screen").fadeOut();
+      $("#think-button").addClass('active').siblings('.active').removeClass('active');
+      $('.think-view').addClass('active').siblings('.active').removeClass('active');
+  });
+
+});
+
 // found help here: https://ctrlq.org/code/20004-google-spreadsheets-json
 
 $.getJSON('https://spreadsheets.google.com/feeds/list/1Q36E8DgVodL97kdDYEyx-jlRhPqSjqy1xe2DHQ7DiyU/od6/public/values?alt=json', function(data) {

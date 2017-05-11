@@ -5,6 +5,6 @@
     <desc>Created with Sketch.</desc>
     <defs></defs>
     <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linejoin="round">
-        <ellipse id="Earth-path" stroke="#143BF0" stroke-width="2" cx="25.5" cy="25.5" rx="24.5" ry="24.5"></ellipse>
+        <ellipse id="Earth-path" stroke="#003c76" stroke-width="2" cx="25.5" cy="25.5" rx="24.5" ry="24.5"></ellipse>
     </g>
 </svg>
