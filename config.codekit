@@ -3193,6 +3193,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/img\/tree-images\/Fagus grandifolia\/fruit.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 100365,
+		"inputAbbreviatedPath": "\/img\/tree-images\/Fagus grandifolia\/fruit.jpg",
+		"outputAbbreviatedPath": "\/img\/tree-images\/Fagus grandifolia\/fruit.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/img\/tree-images\/Fagus grandifolia\/leaf-group.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
@@ -6537,17 +6548,6 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/img\/tree-images\/Taxodium distichum\/cone-female-gorup.jpg": {
-		"fileType": 16384,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 100543,
-		"inputAbbreviatedPath": "\/img\/tree-images\/Taxodium distichum\/cone-female-gorup.jpg",
-		"outputAbbreviatedPath": "\/img\/tree-images\/Taxodium distichum\/cone-female-gorup.jpg",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
 	"\/img\/tree-images\/Taxodium distichum\/cone-female-group-b.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
@@ -6555,6 +6555,17 @@
 		"initialSize": 143780,
 		"inputAbbreviatedPath": "\/img\/tree-images\/Taxodium distichum\/cone-female-group-b.jpg",
 		"outputAbbreviatedPath": "\/img\/tree-images\/Taxodium distichum\/cone-female-group-b.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/tree-images\/Taxodium distichum\/cone-female-group.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 100543,
+		"inputAbbreviatedPath": "\/img\/tree-images\/Taxodium distichum\/cone-female-group.jpg",
+		"outputAbbreviatedPath": "\/img\/tree-images\/Taxodium distichum\/cone-female-group.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0

@@ -18,16 +18,12 @@
 </head>
 
 <body class="mainbody winterspring">
-  <div class="branding">
-    <div class="logotype">
-    <h3>touch anywhere to plant a tree.</h3>
-    </div>
-  </div>
+  
 
   <div class="intro-screen">
 
     <div class="branding">
-      <div class="logotype">
+      <div class="arborlogo">
       <h1>Arbor<span class="superscript">alpha</span></h1>
       </div>
     </div>
@@ -268,19 +264,23 @@
                   <p class="longevity">{{gsx$origin.$t}}</p>
 
                 </div>
-                <div class="arbor-col-3-4">
-
+                <div class="arbor-col-3-4 info-flex">
+                <div>
                   <h6 class="superheader">Description</h6>
                   <p class="summary">{{gsx$summary.$t}}</p>
-
+                </div>
+                <div>
                   <h6 class="superheader">Habitat</h6>
                   <p class="habitat">{{gsx$habitat.$t}}</p>
-
+                </div>
+                <div>
                   <h6 class="superheader">Bloom Time</h6>
                   <p class="bloomtime">{{gsx$bloomtime.$t}}</p>
-
+                </div>
+                <div>
                   <h6 class="superheader">Leaf Growth</h6>
                   <p class="bloomtime">{{gsx$leafgrowth.$t}}</p>
+                </div>
 
                 </div>
               </div>
@@ -381,7 +381,12 @@
 </div>
 </div>
 
-<div class="site-view play-view active">
+<div class="site-view play-view">
+<div class="branding">
+    <div class="logotype">
+    <h3>touch anywhere to plant a tree.</h3>
+    </div>
+  </div>
 
 <a class="reset-link" href="javascript:window.location.reload();">
 
@@ -467,6 +472,11 @@
 </div>
 
 <div class="site-view think-view">
+<div class="branding">
+    <div class="logotype">
+    <h3>find a tree near you.</h3>
+    </div>
+  </div>
 
     <div id='map' style='width: 100vw; height: 100vh;'></div>
 <script>

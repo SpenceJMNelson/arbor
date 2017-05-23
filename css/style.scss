@@ -63,7 +63,7 @@ body {
 .female:before, .male:before {
   top:-30px;
   left:-30px;
-  
+
 
 }
 
@@ -72,17 +72,18 @@ body {
   color: $fruit;
   top: 50%;
   left: 50%;
-  transform: translateX(-50%) translateY(-50%) translateZ(300px);
+  transform: translateX(-50%) translateY(-50%) translateZ(700px);
   text-align: center; }
 
-.logotype > * {
-  animation-name: build-in-rise;
-  animation-duration: 12s;
-  animation-fill-mode: both;
-  animation-delay: .1s; }
+  .branding .logotype > * {
+    opacity:0;
+  }
 
-  .logotype > h3 {
-  animation-delay: 13s; }
+.active .branding .logotype > * {
+  animation-name: build-in-rise;
+  animation-duration: 3s;
+  animation-fill-mode: both; }
+
 
 h1, h2, h3, h4, h5, p {
   font-weight: 100;
@@ -194,7 +195,9 @@ overflow-x: hidden;
 }
 
 .info-text-wrapper {
-  padding-left:2em;
+  padding-left: 2em;
+margin-right: 2em;
+width: 40% !important;
 }
 
 .bottom-navigation a {
@@ -808,6 +811,16 @@ border-radius: 100%
   top: 0;
   left: 0;
   right: 0;
+  bottom: 0;
+  background-color: $figure;
+  mix-blend-mode: screen; }
+
+  .supplemental-tree-info .color-image-wrapper:after, .tertiary-tree-info .color-image-wrapper:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
   bottom: 5px;
   background-color: $figure;
   mix-blend-mode: screen; }
@@ -849,7 +862,7 @@ flex-direction: column;
 }
 
 .color-image-wrapper.bark {
-  width:10vw;
+  width:15vw;
   height:30vw;
   overflow:hidden;
 }
@@ -916,6 +929,7 @@ flex-direction: column;
 @media screen and (max-width: 480px) {
     .intro-navigation {
         flex-wrap: wrap;
+        justify-content: center;
     }
 
 }
@@ -957,7 +971,7 @@ stroke:$figure!important;
 
   .intro-navigation p{
     font-family: monospace;
-    font-size:1rem;
+    font-size:14px;
   }
 
   .intro-navigation svg > *{
@@ -1143,7 +1157,12 @@ transform-style: preserve-3d;
 
 .backbutton {
   text-decoration: none;
-  color: inherit; }
+  color: inherit; 
+  display:inline-block;
+  margin-bottom:.3em;
+}
+
+
 
 .backbutton:before {
   content: "\21A2";
@@ -1170,6 +1189,18 @@ input.search {
   font-weight: 100;
   font-style: italic;
   font-size: 2.1rem !important; }
+
+
+@media screen and (max-width: 480px) {
+    input.search {
+          height: 2.6em;
+line-height: 1;
+padding: .6em;
+    }
+
+}
+
+
 
 .btn-outline {
   font-size: 12px;

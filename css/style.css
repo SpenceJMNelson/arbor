@@ -54,17 +54,16 @@ body {
   color: #de4999;
   top: 50%;
   left: 50%;
-  transform: translateX(-50%) translateY(-50%) translateZ(300px);
+  transform: translateX(-50%) translateY(-50%) translateZ(700px);
   text-align: center; }
 
-.logotype > * {
-  animation-name: build-in-rise;
-  animation-duration: 12s;
-  animation-fill-mode: both;
-  animation-delay: .1s; }
+.branding .logotype > * {
+  opacity: 0; }
 
-.logotype > h3 {
-  animation-delay: 13s; }
+.active .branding .logotype > * {
+  animation-name: build-in-rise;
+  animation-duration: 3s;
+  animation-fill-mode: both; }
 
 h1, h2, h3, h4, h5, p {
   font-weight: 100;
@@ -165,7 +164,9 @@ p {
   box-shadow: 0px 0px 10px rgba(4, 51, 97, 0.2); }
 
 .info-text-wrapper {
-  padding-left: 2em; }
+  padding-left: 2em;
+  margin-right: 2em;
+  width: 40% !important; }
 
 .bottom-navigation a {
   width: 40px;
@@ -739,6 +740,16 @@ svg g {
   top: 0;
   left: 0;
   right: 0;
+  bottom: 0;
+  background-color: #043361;
+  mix-blend-mode: screen; }
+
+.supplemental-tree-info .color-image-wrapper:after, .tertiary-tree-info .color-image-wrapper:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
   bottom: 5px;
   background-color: #043361;
   mix-blend-mode: screen; }
@@ -774,7 +785,7 @@ svg g {
   height: 30vw; }
 
 .color-image-wrapper.bark {
-  width: 10vw;
+  width: 15vw;
   height: 30vw;
   overflow: hidden; }
 
@@ -828,7 +839,8 @@ svg g {
 
 @media screen and (max-width: 480px) {
   .intro-navigation {
-    flex-wrap: wrap; } }
+    flex-wrap: wrap;
+    justify-content: center; } }
 .intro-navigation-link {
   width: 33%;
   text-align: center;
@@ -852,7 +864,7 @@ svg g {
 
 .intro-navigation p {
   font-family: monospace;
-  font-size: 1rem; }
+  font-size: 14px; }
 
 .intro-navigation svg > * {
   width: 44px;
@@ -1010,7 +1022,9 @@ svg g {
 
 .backbutton {
   text-decoration: none;
-  color: inherit; }
+  color: inherit;
+  display: inline-block;
+  margin-bottom: .3em; }
 
 .backbutton:before {
   content: "\21A2";
@@ -1038,6 +1052,11 @@ input.search {
   font-style: italic;
   font-size: 2.1rem !important; }
 
+@media screen and (max-width: 480px) {
+  input.search {
+    height: 2.6em;
+    line-height: 1;
+    padding: .6em; } }
 .btn-outline {
   font-size: 12px;
   font-family: monospace; }
